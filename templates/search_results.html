@@ -64,25 +64,43 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {% if result['Provider Other Organization Name'] and result['Provider Other Organization Name']|string|trim|lower not in ['nan', 'none', ''] %}
-                                {{ result['Provider Other Organization Name'] }}
-                                <small class="d-block text-muted">Also known as: {{ result['Provider Organization Name (Legal Business Name)'] }}</small>
+                            {% set other_name = result['Provider Other Organization Name']|string|trim %}
+                            {% set legal_name = result['Provider Organization Name (Legal Business Name)']|string|trim %}
+                            {% if other_name and other_name.lower() not in ['nan', 'none', '', 'null'] %}
+                                {{ other_name }}
+                                <small class="d-block text-muted">Also known as: {{ legal_name }}</small>
                             {% else %}
-                                {{ result['Provider Organization Name (Legal Business Name)'] }}
+                                {{ legal_name }}
                             {% endif %}
                         </h5>
                         <h6 class="card-subtitle mb-2 text-success">${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
                         
                         <p class="card-text">
                             <strong>Address:</strong><br>
-                            {{ result['Provider First Line Business Practice Location Address'] }}<br>
-                            {% set second_line = result['Provider Second Line Business Practice Location Address']|string|trim %}
-                            {% if second_line and second_line.lower() != 'nan' and second_line.lower() != 'none' %}
-                                {{ second_line }}<br>
+                            {% set address_line1 = result['Provider First Line Business Practice Location Address']|string|trim %}
+                            {% if address_line1 and address_line1.lower() not in ['nan', 'none', '', 'null'] %}
+                                {{ address_line1 }}<br>
                             {% endif %}
-                            {{ result['Provider Business Practice Location Address City Name'] }},
-                            {{ result['Provider Business Practice Location Address State Name'] }}
-                            {{ (result['Provider Business Practice Location Address Postal Code']|string)[:5] }}
+                            
+                            {% set address_line2 = result['Provider Second Line Business Practice Location Address']|string|trim %}
+                            {% if address_line2 and address_line2.lower() not in ['nan', 'none', '', 'null'] %}
+                                {{ address_line2 }}<br>
+                            {% endif %}
+                            
+                            {% set city = result['Provider Business Practice Location Address City Name']|string|trim %}
+                            {% set state = result['Provider Business Practice Location Address State Name']|string|trim %}
+                            {% set zip_code = (result['Provider Business Practice Location Address Postal Code']|string)[:5] %}
+                            
+                            {% if city and city.lower() not in ['nan', 'none', '', 'null'] %}
+                                {{ city }},
+                            {% endif %}
+                            {% if state and state.lower() not in ['nan', 'none', '', 'null'] %}
+                                {{ state }}
+                            {% endif %}
+                            {% if zip_code and zip_code.lower() not in ['nan', 'none', '', 'null'] %}
+                                {{ zip_code }}
+                            {% endif %}
+                            
                             {% if result.get('distance') %}
                             <br><small class="text-muted">{{ "%.1f"|format(result['distance']) }} miles away</small>
                             {% endif %}
