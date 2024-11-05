@@ -21,7 +21,14 @@
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     const response = await fetch(`/api/stats_data?procedure={{ procedure }}`);
+    
+    if (!response.ok) {
+        document.getElementById('boxPlot').innerHTML = '<div class="alert alert-danger">Error fetching statistics data</div>';
+        return;
+    }
+    
     const data = await response.json();
+    console.log('Statistics data:', data);
     
     if (data.error) {
         document.getElementById('boxPlot').innerHTML = `<div class="alert alert-info">${data.error}</div>`;
@@ -34,13 +41,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
         borderColor: 'rgb(54, 162, 235)',
         data: labels.map(plan => ({
-            min: data[plan].min,
-            q1: data[plan].Q1,
-            median: data[plan].median,
-            q3: data[plan].Q3,
-            max: data[plan].max
+            min: parseFloat(data[plan].min),
+            q1: parseFloat(data[plan].Q1),
+            median: parseFloat(data[plan].median),
+            q3: parseFloat(data[plan].Q3),
+            max: parseFloat(data[plan].max)
         }))
     }];
+    
+    console.log('Processed datasets:', datasets);
 
     new Chart(document.getElementById('boxPlot'), {
         type: 'boxplot',
@@ -53,7 +62,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Price Distribution by Insurance Plan'
+                    text: 'Price Distribution by Insurance Plan',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
                 },
                 legend: {
                     display: false
@@ -62,12 +75,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     callbacks: {
                         label: function(context) {
                             const item = context.raw;
+                            if (!item) return [];
                             return [
-                                `Min: $${item.min.toFixed(2)}`,
-                                `Q1: $${item.q1.toFixed(2)}`,
-                                `Median: $${item.median.toFixed(2)}`,
-                                `Q3: $${item.q3.toFixed(2)}`,
-                                `Max: $${item.max.toFixed(2)}`
+                                `Min: $${parseFloat(item.min).toFixed(2)}`,
+                                `Q1: $${parseFloat(item.q1).toFixed(2)}`,
+                                `Median: $${parseFloat(item.median).toFixed(2)}`,
+                                `Q3: $${parseFloat(item.q3).toFixed(2)}`,
+                                `Max: $${parseFloat(item.max).toFixed(2)}`
                             ];
                         }
                     }
@@ -78,7 +92,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: 'Price ($)'
+                        text: 'Price ($)',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toFixed(2);
+                        }
                     }
                 }
             }
