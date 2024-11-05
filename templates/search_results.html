@@ -7,7 +7,7 @@
         <h6>Active Filters:</h6>
         <div class="d-flex flex-wrap gap-2">
             {% if request.args.get('provider') %}
-            <span class="badge bg-secondary">Provider: {{ request.args.get('provider') }}</span>
+            <span class="badge bg-secondary">Facility: {{ request.args.get('provider') }}</span>
             {% endif %}
             {% if request.args.get('min_price') or request.args.get('max_price') %}
             <span class="badge bg-secondary">
