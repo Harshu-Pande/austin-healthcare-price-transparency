@@ -34,16 +34,17 @@
     {% else %}
         <div class="mb-3 d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                {% set args = request.args.copy() %}
-                {% set _ = args.update({'sort': 'price'}) %}
-                <a href="{{ url_for('search_results', **args) }}" 
+                {% set args = request.args.to_dict() %}
+                {% set price_args = args.copy() %}
+                {% set _ = price_args.update({'sort': 'price'}) %}
+                <a href="{{ url_for('search_results', **price_args) }}" 
                    class="btn btn-outline-primary {% if request.args.get('sort', 'price') == 'price' %}active{% endif %}">
                    Sort by Price
                 </a>
 
-                {% set args = request.args.copy() %}
-                {% set _ = args.update({'sort': 'proximity'}) %}
-                <a href="{{ url_for('search_results', **args) }}" 
+                {% set proximity_args = args.copy() %}
+                {% set _ = proximity_args.update({'sort': 'proximity'}) %}
+                <a href="{{ url_for('search_results', **proximity_args) }}" 
                    class="btn btn-outline-primary {% if request.args.get('sort') == 'proximity' %}active{% endif %}">
                    Sort by Proximity
                 </a>

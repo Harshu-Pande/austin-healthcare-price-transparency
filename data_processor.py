@@ -32,12 +32,23 @@ class DataProcessor:
         self.data_files = {}
         self.summary_files = {}
         
-        # Initialize Redis connection
+        # Initialize Redis connection with fallback to environment variables
+        redis_host = os.getenv('REDIS_HOST', 'localhost')
+        redis_port = int(os.getenv('REDIS_PORT', 6379))
+        redis_db = int(os.getenv('REDIS_DB', 0))
+        
         try:
-            self.redis_client = redis.Redis(host='localhost', port=6379, db=0)
-            self.redis_client.ping()  # Test connection
+            self.redis_client = redis.Redis(
+                host=redis_host,
+                port=redis_port,
+                db=redis_db,
+                socket_connect_timeout=2,
+                socket_timeout=2,
+                decode_responses=True
+            )
+            self.redis_client.ping()
             logger.info("Redis connection established successfully")
-        except redis.ConnectionError as e:
+        except (redis.ConnectionError, redis.TimeoutError) as e:
             logger.warning(f"Redis connection failed: {e}. Using in-memory cache fallback.")
             self.redis_client = None
         

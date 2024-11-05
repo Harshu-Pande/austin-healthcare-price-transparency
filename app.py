@@ -33,27 +33,28 @@ def get_procedures():
 
 @app.route('/search_results')
 def search_results():
-    insurance_plan = request.args.get('plan')
-    insurance_type = request.args.get('type', '')
-    procedure = request.args.get('procedure')
-    zipcode = request.args.get('zipcode')
-    sort_by = request.args.get('sort', 'price')
-    provider = request.args.get('provider')
-    min_price = float(request.args.get('min_price')) if request.args.get('min_price') else None
-    max_price = float(request.args.get('max_price')) if request.args.get('max_price') else None
-    distance = int(request.args.get('distance')) if request.args.get('distance') else None
+    # Get all arguments from request
+    args = request.args.to_dict()
     
-    if not all([insurance_plan, procedure]):
+    # Set default sort if not provided
+    sort_by = args.get('sort', 'price')
+    
+    # Convert numeric parameters
+    min_price = float(args.get('min_price')) if args.get('min_price') else None
+    max_price = float(args.get('max_price')) if args.get('max_price') else None
+    distance = int(args.get('distance')) if args.get('distance') else None
+    
+    if not all([args.get('plan'), args.get('procedure')]):
         return render_template('search_results.html', 
                           results={"error": "Missing required parameters", "results": []})
     
     results = data_processor.get_search_results(
-        insurance_plan=insurance_plan,
-        insurance_type=insurance_type,
-        procedure=procedure,
-        zipcode=zipcode,
+        insurance_plan=args.get('plan'),
+        insurance_type=args.get('type', ''),
+        procedure=args.get('procedure'),
+        zipcode=args.get('zipcode'),
         sort_by=sort_by,
-        provider=provider,
+        provider=args.get('provider'),
         min_price=min_price,
         max_price=max_price,
         distance=distance
