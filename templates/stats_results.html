@@ -51,15 +51,27 @@ document.addEventListener('DOMContentLoaded', async function() {
     }));
 
     const calculateOptimalScale = (data) => {
-        const allValues = Object.values(data).flatMap(d => [d.min, d.Q1, d.median, d.Q3, d.max]);
+        const allValues = Object.values(data).flatMap(d => [
+            parseFloat(d.min), 
+            parseFloat(d.Q1), 
+            parseFloat(d.median), 
+            parseFloat(d.Q3), 
+            parseFloat(d.max)
+        ]);
         const maxValue = Math.max(...allValues);
         const minValue = Math.min(...allValues);
         const range = maxValue - minValue;
-        const padding = range * 0.2;  // 20% padding
+        
+        // Calculate padding based on data range
+        const padding = range < 100 ? range * 0.5 : range * 0.2;
+        
+        // Ensure minimum range for small variations
+        const effectiveRange = Math.max(range, maxValue * 0.1);
+        
         return {
             min: Math.max(0, minValue - padding),
             max: maxValue + padding,
-            stepSize: range / 8  // Create 8 steps for better granularity
+            stepSize: effectiveRange / 10  // Create 10 steps for better granularity
         };
     };
 
@@ -118,6 +130,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     min: scale.min,
                     max: scale.max,
                     ticks: {
+                        count: 10,
                         stepSize: scale.stepSize,
                         callback: value => '$' + value.toLocaleString('en-US', {
                             minimumFractionDigits: 2,
@@ -128,10 +141,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                         display: true,
                         text: 'Price ($)',
                         font: { size: 14, weight: 'bold' }
-                    },
-                    grid: {
-                        color: 'rgba(255, 255, 255, 0.1)',
-                        drawBorder: true
                     }
                 },
                 x: {
