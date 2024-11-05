@@ -64,9 +64,11 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{ result['Provider Organization Name (Legal Business Name)'] }}
                             {% if result['Provider Other Organization Name'] and result['Provider Other Organization Name']|string|trim %}
-                            <small class="d-block text-muted">Also known as: {{ result['Provider Other Organization Name'] }}</small>
+                                {{ result['Provider Other Organization Name'] }}
+                                <small class="d-block text-muted">Also known as: {{ result['Provider Organization Name (Legal Business Name)'] }}</small>
+                            {% else %}
+                                {{ result['Provider Organization Name (Legal Business Name)'] }}
                             {% endif %}
                         </h5>
                         <h6 class="card-subtitle mb-2 text-success">${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
