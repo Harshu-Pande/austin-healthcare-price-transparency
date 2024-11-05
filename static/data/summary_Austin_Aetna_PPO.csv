@@ -1,0 +1,15 @@
+billing_code,procedure_name,count,min,Q1,median,Q3,max,range,IQR,mean,std,10th_percentile,90th_percentile
+11401,Under Excision-Benign Lesions Procedures on the Skin 0.6-1 CM,291,78.74,94.98,143.69,164.21,4461.0,4382.26,69.23,426.1,898.03,94.08,1038.0
+17250,Chemical destruction of pre-cancerous lesions of the skin,292,27.7,33.15,81.14,88.41,4461.0,4433.3,55.26,365.37,915.41,33.1,1037.5
+36478,Laser removal of incompetent vein,289,256.92,326.35,1062.81,1324.73,5155.34,4898.42,998.38,1106.84,960.96,307.43,2311.86
+64493,Injection into lower back of nerve block using imaging guidance,285,72.62,84.41,170.9,184.26,4461.0,4388.38,99.85,446.29,909.73,84.41,1200.0
+71046,"2 views, front and back",126,21.4,25.45,25.45,29.49,439.0,417.6,4.04,32.74,37.69,25.45,35.53
+72072,"Radiologic examination of the middle spine, 3 views",139,24.82,29.85,31.38,37.86,439.0,414.18,8.01,44.69,47.04,29.85,66.99
+84436,Blood test to measure a type of thyroid hormone,47,5.08,5.22,6.4,13.4,37.0,31.92,8.19,13.11,11.93,5.15,34.73
+86780,Blood test to determine existence of certain bacterium that causes syphilis,120,7.41,7.41,7.94,10.06,66.84,59.43,2.65,12.11,12.73,7.41,15.51
+93015,Test to determine heart abnormalities,121,46.18,65.0,71.94,71.94,371.01,324.83,6.94,77.42,36.89,56.45,93.56
+97597,"Debridement (for example, high pressure waterjet with/without suction, sharp selective debridement with scissors, scalpel and forceps)",289,18.49,34.93,93.67,104.97,4461.0,4442.51,70.04,372.62,918.37,33.45,1070.4
+98972,"Qualified non physician health care professional online digital assessment and management, for an established patient, for up to 7 days, cumulative time during the 7 days; 21 or more minutes",234,22.3,29.43,30.64,31.0,118.42,96.12,1.57,31.8,9.28,26.0,39.01
+99284,"Emergency department visit, problem of high severity",436,78.86,95.92,133.42,154.2,3119.0,3040.14,58.28,157.28,222.51,95.87,181.42
+99382,Initial visit for new patients 1-4 years old,248,58.11,65.07,91.57,95.05,329.3,271.19,29.98,89.99,32.2,65.07,116.51
+99442,"Physician telephone patient service, 11-20 minutes of medical discussion",240,21.44,53.46,69.26,74.27,192.03,170.59,20.81,66.95,22.43,51.99,87.16

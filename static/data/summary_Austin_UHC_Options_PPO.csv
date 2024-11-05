@@ -1,0 +1,481 @@
+billing_code,procedure_name,count,min,Q1,median,Q3,max,range,IQR,mean,std,10th_percentile,90th_percentile
+10005,"Fine needle aspiration biopsy, including ultrasound guidance; first lesion",365,86.09,109.97,176.88,1554.0,4419.0,4332.91,1444.03,695.98,828.72,99.34,1736.0
+10021,Fine Needle Aspiration Biopsy without imaging,367,65.68,127.89,159.32,963.0,2866.0,2800.32,835.11,477.14,560.63,75.79,1201.0
+10040,"Incision and Drainage Procedures on the Skin, Subcutaneous and Accessory Structures",366,67.5,86.48,133.48,963.0,2866.0,2798.5,876.52,465.08,569.22,84.18,1201.0
+10060,Incision and drainage of abscess; simple or single and complex or multiple,367,73.78,98.96,152.74,963.0,2866.0,2792.22,864.04,471.49,564.46,93.11,1201.0
+10140,"Incision and drainage of hematoma, seroma or fluid collection",367,96.18,139.15,214.79,2142.0,5398.0,5301.82,2002.85,1029.34,1289.24,131.27,2323.0
+10160,"Puncture aspiration of abscess, hematoma, bulla, or cyst",367,61.54,111.14,171.55,963.0,2866.0,2804.46,851.86,477.88,560.75,100.42,1201.0
+11000,Removal of infected skin,367,36.74,46.59,71.91,963.0,2866.0,2829.26,916.41,432.27,587.86,43.58,1201.0
+11056,Paring or cutting of benign hyperkeratotic lesion,367,38.23,51.35,76.61,963.0,2866.0,2827.77,911.65,438.7,584.1,49.63,1201.0
+11102,"Tangential biopsy of skin (e.g., for example, shave, scoop, saucerize, curette); single lesion",365,66.62,85.78,131.6,963.0,2866.0,2799.38,877.22,463.02,571.3,76.87,1201.0
+11103,"Tangential biopsy of skin (e.g., for example, shave, scoop, saucerize, curette); each separate/additional lesion",365,35.43,46.26,72.14,963.0,2866.0,2830.57,916.74,433.23,589.45,40.88,1201.0
+11200,"Removal of skin tags, multiple fibrocutaneous tags, any area",367,56.15,74.9,115.61,963.0,2866.0,2809.85,888.1,452.56,575.5,68.21,1201.0
+11401,Under Excision-Benign Lesions Procedures on the Skin 0.6-1 CM,367,79.0,127.32,194.58,963.0,2866.0,2787.0,835.68,492.02,552.76,117.74,1201.0
+11422,Under Excision-Benign Lesions Procedures on the Skin 1.1-2 CM,367,119.87,151.96,230.3,1554.0,4419.0,4299.13,1402.04,721.86,809.23,138.32,1736.0
+11602,Excision-Malignant Lesions,367,79.0,202.34,266.55,963.0,2866.0,2787.0,760.66,551.49,521.92,190.01,1201.0
+11721,Removal of 6 or more nails,367,30.26,38.37,59.22,963.0,2866.0,2835.74,924.63,425.5,592.06,34.92,1201.0
+11730,Separation and removal of the entire nail plate or a portion of nail plate,367,67.5,84.99,130.66,963.0,2866.0,2798.5,878.01,463.01,569.47,84.65,1201.0
+11900,Injections to remove up to 7 lesions on the skin,367,35.54,46.89,72.38,963.0,2866.0,2830.46,916.11,432.2,587.88,42.23,1201.0
+12001,"Simple repair of superficial wounds of scalp, neck, axillae, external genitalia, trunk and/or extremities",367,60.52,84.24,135.7,963.0,2866.0,2805.48,878.76,461.02,570.49,69.83,1201.0
+12011,"Simple repair of superficial wounds of face, ears, eyelids, nose, lips and/or mucous membranes",367,73.89,101.09,161.49,963.0,2866.0,2792.11,861.91,472.39,563.75,85.26,1201.0
+17000,Destruction of pre-cancerous lesion,367,43.4,63.95,97.48,963.0,2866.0,2822.6,899.05,442.67,581.35,50.08,1201.0
+17003,Destruction of 2-14 pre-cancerous lesions,317,5.22,8.53,13.16,1108.0,2866.0,2860.78,1099.47,464.72,630.75,6.44,1201.0
+17110,Destruction of 1-14 common or plantar warts,367,69.6,92.87,143.35,963.0,2866.0,2796.4,870.13,466.68,567.15,85.8,1201.0
+17111,Destruction of >15 common or plantar warts,367,79.0,110.23,170.14,963.0,2866.0,2787.0,852.77,479.16,559.94,100.69,1201.0
+17250,Chemical destruction of pre-cancerous lesions of the skin,367,53.17,67.6,104.34,963.0,2866.0,2812.83,895.4,448.61,577.92,65.51,1201.0
+17311,"Micrographic technique, including removal of all gross tumor, surgical excision of tissue specimens, mapping, color coding of specimens, microscopic examination of specimens",367,79.0,550.88,646.0,1108.0,2866.0,2787.0,557.12,820.58,454.27,509.22,1201.0
+19120,REMOVAL OF BREAST LESION,369,322.9,422.33,651.89,2750.0,9335.0,9012.1,2327.67,1652.43,1867.8,393.02,3350.6
+20550,Injection of medication into a tendon or ligament,367,36.6,51.46,77.55,963.0,2866.0,2829.4,911.54,433.52,587.0,42.23,1201.0
+20551,Injection of medication into the tendon/ligament origin,367,37.53,52.69,80.37,963.0,2866.0,2828.47,910.31,434.14,586.61,43.31,1201.0
+20553,Injection of medication into an area that triggers pain,367,42.69,55.45,84.6,963.0,2866.0,2823.31,907.55,436.93,584.89,49.26,1201.0
+20600,Draining or injecting medication into a small joint/bursa without ultrasound,367,33.78,48.26,65.03,963.0,2866.0,2832.22,914.74,429.96,589.23,38.98,1201.0
+20605,Draining or injecting medication into a large joint/bursa without ultrasound,367,34.95,51.46,70.45,963.0,2866.0,2831.05,911.54,431.52,588.25,40.33,1201.0
+20610,Draining or injecting medication into a major joint/bursa without ultrasound,367,41.52,62.22,85.54,963.0,2866.0,2824.48,900.78,438.68,583.79,47.91,1201.0
+20612,Removal of fluid or injection of medication into a ganglion cyst,367,41.29,53.0,79.9,963.0,2866.0,2824.71,910.0,435.89,585.57,47.64,1201.0
+27440,Repair of knee joint,368,540.34,691.51,1067.37,5153.0,24439.0,23898.66,4461.49,3655.43,5541.46,623.63,5597.4
+27441,Repair of knee joint,368,550.0,718.74,1103.09,5153.0,21710.0,21160.0,4434.26,3318.82,4464.99,644.2,5597.4
+27442,Repair of knee joint,368,550.0,781.78,1167.95,5153.0,21710.0,21160.0,4371.22,3354.88,4446.08,682.1,5597.4
+27443,Repair of knee joint,368,550.0,733.07,1093.22,5153.0,21710.0,21160.0,4419.93,3319.46,4464.4,635.27,5597.4
+27445,Repair of knee joint with hinged prosthesis,368,640.0,1129.17,1685.42,6443.0,21710.0,21070.0,5313.83,4285.59,4943.05,982.27,7888.0
+27446,Repair of knee joint,367,785.62,998.36,1564.15,6646.0,24439.0,23653.38,5647.64,4982.12,6256.93,906.48,17086.0
+28296,"Under Repair, Revision, and/or Reconstruction Procedures on the Foot and Toes",368,480.0,703.81,976.1,3509.0,10677.0,10197.0,2805.19,2112.65,2054.86,622.08,3689.0
+29826,Shaving of shoulder bone using an endoscope,367,79.0,160.52,243.68,1108.0,5377.0,5298.0,947.48,726.15,1041.52,136.69,1201.0
+29848,Carpal tunnel release,368,344.6,441.52,681.5,3428.0,10677.0,10332.4,2986.48,1943.54,2176.92,397.62,4256.0
+29880,Surgery to remove of all or part of a torn meniscus in both medial and lateral compartments,368,379.79,516.18,815.91,3428.0,10677.0,10297.21,2911.82,2007.79,2161.34,438.22,4390.7
+29881,Surgery to remove of all or part of a torn meniscus in one compartment,368,365.95,495.05,760.23,3428.0,10677.0,10311.05,2932.95,1993.38,2170.56,422.25,4390.7
+29888,ACL reconstruction,368,640.0,892.37,1329.63,6443.0,14886.0,14246.0,5550.63,3374.3,3329.46,766.55,6987.0
+30520,Repair procedures of the nose,368,338.42,542.61,837.53,2687.0,9335.0,8996.58,2144.39,1731.23,1818.12,499.12,3392.6
+31231,"Nasal endoscopy, diagnostic, unilateral or bilateral",367,79.0,177.37,224.18,963.0,2866.0,2787.0,785.63,522.45,535.96,148.33,1201.0
+31237,"Surgical nasal/ sinus endoscopy with biopsy, polypectomy or debridement",367,169.14,266.31,369.82,2142.0,5398.0,5228.86,1875.69,1139.4,1297.73,195.8,2323.0
+31575,"Flexible, fiberoptic diagnostic laryngoscopy",367,79.0,105.38,152.29,963.0,2866.0,2787.0,857.62,473.75,563.07,94.46,1201.0
+36415,Collection of venous blood by venipuncture,2,5.0,5.0,5.0,5.0,5.0,0.0,0.0,5.0,0.0,5.0,5.0
+36471,Injections to remove spider veins on the limbs or trunk,367,79.0,160.83,217.77,963.0,2866.0,2787.0,802.17,516.49,539.79,151.31,1201.0
+36475,Ablation of incompetent vein,368,480.0,1480.0,2183.49,3509.0,10677.0,10197.0,2029.0,2643.15,1839.98,1053.73,4530.19
+36478,Laser removal of incompetent vein,368,480.0,1242.48,1777.07,3509.0,10677.0,10197.0,2266.52,2460.08,1919.42,819.05,4390.7
+42820,Removal of tonsils and adenoid glands patient younger than age 12,368,193.77,268.47,395.27,2687.0,9335.0,9141.23,2418.53,1491.56,1907.93,223.58,2907.0
+42826,Primary or secondary removal of tonsils,368,168.9,233.21,342.63,2687.0,9335.0,9166.1,2453.79,1465.72,1921.89,194.89,2907.0
+42830,Primary removal of the adenoids,368,139.57,192.16,283.41,2687.0,9335.0,9195.43,2494.84,1437.03,1939.2,161.05,2907.0
+43235,"Diagnostic examination of esophagus, stomach, and/or upper small bowel using an endoscope",367,187.2,274.18,412.34,2142.0,5398.0,5210.8,1867.82,1115.36,1234.96,216.0,2323.0
+43239,"Biopsy of the esophagus, stomach, and/or upper small bowel using an endoscope",367,249.36,316.45,532.03,2142.0,5398.0,5148.64,1825.55,1163.45,1207.11,287.72,2323.0
+43846,Surgical procedure used for weight loss resulting in a partial removal of stomach,367,193.0,1293.43,1581.48,2666.0,17971.0,17778.0,1372.57,2340.04,2430.92,1234.04,2892.0
+44388,Diagnostic examination of large bowel using an endoscope which is inserted through abdominal opening,367,203.85,305.42,452.96,2142.0,5398.0,5194.15,1836.58,1138.09,1220.97,235.22,2323.0
+44389,Biopsies of large bowel using an endoscope which is inserted through abdominal opening,367,268.37,367.4,526.86,2142.0,5398.0,5129.63,1774.6,1183.38,1195.24,309.65,2323.0
+44394,Removal of large bowel polyps or growths using an endoscope,367,284.08,437.1,627.34,2142.0,5398.0,5113.92,1704.9,1226.64,1169.33,327.79,2323.0
+45378,Diagnostic examination of large bowel using an endoscope,367,220.97,341.13,486.88,2142.0,5398.0,5177.03,1800.87,1161.35,1206.9,254.97,2323.0
+45379,Removal of foreign bodies in large bowel using an endoscope,367,285.02,438.49,621.62,2142.0,5398.0,5112.98,1703.51,1227.17,1169.0,328.87,2323.0
+45380,Biopsy of large bowel using an endoscope,367,284.55,426.5,617.1,2142.0,5398.0,5113.45,1715.5,1215.05,1176.33,328.33,2323.0
+45381,Injections of large bowel using an endoscope,367,282.44,415.54,619.45,2142.0,5398.0,5115.56,1726.46,1215.24,1176.23,325.89,2323.0
+45382,Control of bleeding in large bowel using an endoscope,367,340.0,564.89,801.82,2142.0,5398.0,5058.0,1577.11,1342.54,1114.51,519.47,2329.66
+45384,Removal of polyps or growths in large bowel using an endoscope,367,317.39,429.18,617.58,2142.0,5398.0,5080.61,1712.82,1228.59,1170.14,366.22,2323.0
+45385,Removal of polyps or growths of large bowel using an endoscope,367,297.22,458.5,649.81,2142.0,5398.0,5100.78,1683.5,1241.84,1160.8,342.95,2323.0
+45386,Balloon dilation of large bowel using an endoscope,367,340.0,581.67,869.59,2142.0,5398.0,5058.0,1560.33,1340.83,1109.52,471.24,2323.0
+45388,Destruction of large bowel growths using an endoscope,365,340.0,538.45,2142.0,2323.0,9646.86,9306.86,1784.55,1929.17,1555.07,485.97,3464.03
+45390,Removal of large bowel tissue using an endoscope,365,224.97,303.58,465.77,2142.0,5398.0,5173.03,1838.42,1150.53,1218.35,261.06,2323.0
+45391,Ultrasound examination of lower large bowel using an endoscope,367,174.3,267.09,362.65,2142.0,5398.0,5223.7,1874.91,1105.3,1240.93,202.89,2323.0
+45392,Ultrasound guided needle aspiration or biopsy of lower large bowel using an endoscope,367,205.97,329.46,444.91,2142.0,5398.0,5192.03,1812.54,1148.07,1214.74,239.56,2323.0
+45398,Tying of large bowel using an endoscope,365,340.0,636.88,977.13,2142.0,5398.0,5058.0,1505.12,1416.93,1084.31,605.49,2603.12
+47562,Removal of gallbladder using an endoscope,368,450.16,632.58,878.43,6443.0,14886.0,14435.84,5810.42,3178.92,3467.48,519.42,6987.0
+47563,Gallbladder removal with use of an x-ray exam of the bile ducts,368,490.04,641.17,954.57,6443.0,14886.0,14395.96,5801.83,3203.3,3451.82,565.43,6987.0
+49505,Repair of groin hernia patient age 5 years or older,368,355.86,464.1,694.18,3428.0,10677.0,10321.14,2963.9,1965.38,2187.95,410.61,4390.7
+49650,Inguinal hernia repair done by laparoscope,368,293.23,381.7,571.52,6443.0,14886.0,14592.77,6061.3,2938.05,3506.02,338.34,6987.0
+50590,Surgical procedures on the kidney to break up and remove kidney stones,369,496.61,739.5,1063.58,6443.0,14886.0,14389.39,5703.5,3179.19,3340.99,573.02,6987.0
+51741,A diagnostic test used to measure the flow of urine,367,9.62,20.54,47.72,963.0,2866.0,2856.38,942.46,414.81,599.15,11.1,1201.0
+51798,Ultrasound of bladder to measure urine capacity,367,6.81,16.25,24.92,963.0,2866.0,2859.19,946.75,407.3,603.61,8.17,1201.0
+52000,Procedure on the bladder,367,127.71,186.56,274.93,1554.0,4419.0,4291.29,1367.44,746.63,794.18,162.14,1736.0
+52310,Removing an indwelling ureteral stent by cystoscopy,367,185.56,223.58,345.87,2142.0,5398.0,5212.44,1918.42,1099.7,1245.91,207.59,2323.0
+52332,Ureteral stents inserted internally between the bladder and the kidney and will remain within the patient for a defined period of time,368,122.46,413.5,580.39,2687.0,9335.0,9212.54,2273.5,1629.02,1888.34,350.52,3403.4
+55250,Removal of sperm duct(s),368,242.09,363.02,504.31,2687.0,9335.0,9092.91,2323.98,1590.07,1909.54,285.5,3403.4
+55700,Biopsy of prostate gland,367,166.22,201.88,311.88,2142.0,5398.0,5231.78,1940.12,1076.7,1259.4,191.91,2323.0
+55866,Surgical removal of prostate and surrounding lymph nodes using an endoscope,367,950.0,1504.58,2086.8,6646.0,19299.0,18349.0,5141.42,4388.61,4232.17,1128.44,9834.0
+57022,Incision and drainage of vaginal blood accumulation following delivery,367,119.64,153.48,234.99,2142.0,5398.0,5278.36,1988.52,1035.33,1284.71,138.05,2323.0
+57288,Replacement of sling to support the bladder,369,497.08,648.22,981.45,5153.0,16448.0,15950.92,4504.78,2753.92,3195.81,573.56,5589.0
+57454,Biopsy of cervix or uterus,368,79.0,140.0,202.0,963.0,2866.0,2787.0,823.0,499.57,549.29,127.49,1201.0
+58100,Biopsy of the lining of the uterus,367,65.68,97.46,146.21,963.0,2866.0,2800.32,865.54,463.65,568.32,75.79,1201.0
+58558,Surgical hysteroscopy with biopsy,369,220.74,345.24,1150.0,2750.0,9335.0,9114.26,2404.76,1846.37,1845.17,344.39,3848.4
+58563,Surgical procedure used to treat premenopausal abnormal uterine bleeding,369,284.96,1505.21,2185.97,3509.0,10677.0,10392.04,2003.79,2733.36,1806.17,1416.2,4188.48
+58565,Laparoscopic/Hysteroscopic Procedures on the uterus,369,550.0,1732.31,2400.0,5153.0,12577.0,12027.0,3420.69,3375.66,2340.59,1398.02,5589.0
+58571,Laparoscopic hysterectomy,369,608.27,919.57,1310.61,6443.0,14886.0,14277.73,5523.43,3336.46,3322.22,701.85,6987.0
+58661,"Removal of either benign or malignant tissue from the uterus, ovaries, fallopian tubes, or any of the surrounding tissues using a laparoscope",369,442.42,588.17,879.36,6443.0,14886.0,14443.58,5854.83,3137.08,3459.86,510.49,6987.0
+58662,"Removal of lesions of the ovary, pelvic viscera, or peritoneal surface",369,483.94,644.54,962.08,6443.0,14886.0,14402.06,5798.46,3123.11,3387.56,558.4,6987.0
+58671,Laparoscopic tubal sterilization is surgery to block the fallopian tubes to prevent pregnancy,369,250.3,334.22,497.72,6443.0,14886.0,14635.7,6108.78,2907.38,3537.05,288.81,6987.0
+59000,Removal of amniotic fluid from the uterus for diagnostic purposes,368,81.4,116.41,169.2,1554.0,4419.0,4337.6,1437.59,692.97,827.77,94.97,1736.0
+59025,A common prenatal test used to check on a baby's health.,368,32.14,41.82,63.92,963.0,2866.0,2833.86,921.18,428.24,589.71,37.08,1201.0
+59400,Obstetrical pre- and postpartum care and vaginal delivery,367,193.0,1665.44,1949.02,2865.11,8097.0,7904.0,1199.67,2390.26,1396.55,1274.0,3487.93
+59409,Vaginal delivery,369,551.97,750.53,1126.11,2738.13,9335.0,8783.03,1987.6,1869.77,1760.73,636.89,3350.6
+59410,Vaginal delivery with post-delivery care,367,193.0,886.19,1088.32,2666.0,8097.0,7904.0,1779.81,1697.88,1398.36,809.26,2892.0
+59414,Vaginal delivery of placenta,369,62.4,84.55,126.43,2666.0,9335.0,9272.6,2581.45,1403.68,2023.42,72.0,3350.6
+59425,Pre-delivery care 4-6 visits,367,193.0,402.24,610.0,2666.0,8097.0,7904.0,2263.76,1332.18,1538.16,365.95,2750.0
+59426,Pre-delivery care 7 or more visits,367,193.0,710.18,930.85,2666.0,8097.0,7904.0,1955.82,1573.86,1440.88,644.2,2799.81
+59510,Cesarean delivery with pre- and post-delivery care,367,193.0,1847.06,2116.19,2892.0,8097.0,7904.0,1044.94,2541.92,1438.94,1274.0,3878.3
+59514,Cesarean delivery,367,193.0,820.61,1073.53,2666.0,8097.0,7904.0,1845.39,1628.24,1416.11,719.72,2892.0
+59515,Cesarean delivery with post-delivery care,367,193.0,1039.36,1274.0,2666.0,8097.0,7904.0,1626.64,1842.95,1367.27,981.25,2892.0
+59610,Vaginal delivery after prior cesarean delivery,367,193.0,1752.33,2057.89,2892.0,8097.0,7904.0,1139.67,2458.91,1414.4,1274.0,3656.59
+59612,Vaginal delivery after prior cesarean delivery,369,623.75,835.98,1263.83,2750.0,9335.0,8711.25,1914.02,1936.27,1730.04,719.72,3350.6
+59614,Vaginal delivery after prior cesarean delivery with post-delivery care,367,193.0,962.54,1179.92,2666.0,8097.0,7904.0,1703.46,1759.28,1382.4,884.94,2892.0
+62322,Injection of substance into spinal canal of lower back or sacrum using imaging guidance,365,100.17,135.71,208.22,1554.0,4419.0,4318.83,1418.29,710.36,819.15,116.49,1736.0
+62323,Injection of substance into spinal canal of lower back or sacrum using imaging guidance,365,171.01,212.29,325.71,1554.0,4419.0,4247.99,1341.71,772.9,780.68,197.32,1736.0
+63030,Surgical procedure to decompress a herniated vertebra,368,640.0,860.25,1306.59,6443.0,14886.0,14246.0,5582.75,3267.22,3282.11,760.86,6987.0
+64483,Injections of anesthetic and/or steroid drug into lower or sacral spine nerve root using imaging guidance,367,157.87,217.81,353.57,1554.0,4419.0,4261.13,1336.19,768.32,780.5,182.16,1736.0
+64493,Injection into lower back of nerve block using imaging guidance,365,115.65,162.97,254.66,1554.0,4419.0,4303.35,1391.03,730.95,806.18,133.44,1736.0
+64721,Release of the transverse carpal ligament,368,294.16,371.13,571.98,2687.0,9335.0,9040.84,2315.87,1600.57,1879.51,339.42,3351.2
+66821,Removal of recurring cataract in lens capsule using laser,367,180.0,291.1,449.32,1554.0,4419.0,4239.0,1262.9,817.12,753.48,254.43,1736.0
+66984,Removal of cataract with insertion of lens,368,362.43,608.59,815.64,2687.0,9335.0,8972.57,2078.41,1712.03,1785.38,437.7,2969.0
+67028,Injection of a pharmaceutical agent into the eye,367,67.09,104.16,161.02,963.0,2866.0,2798.91,858.84,479.36,561.09,77.53,1201.0
+69210,Removal of ear wax from one or both ears,367,31.9,45.18,65.8,963.0,2866.0,2834.1,917.82,428.61,590.08,36.81,1201.0
+69436,Insertion of tubes into one or both ears,367,105.09,149.15,217.14,2142.0,5398.0,5292.91,1992.86,1029.66,1288.8,121.65,2323.0
+70450,CT scan head or brain without dye,220,76.24,106.27,112.41,166.03,430.8,354.56,59.76,143.23,69.55,87.97,218.85
+70486,CT Scan of the face and jaw without dye,220,91.96,129.01,183.28,225.77,553.2,461.24,96.76,187.56,82.91,106.1,233.21
+70491,CT scan of neck with dye,220,133.71,185.66,220.64,265.6,718.26,584.55,79.94,238.5,102.8,154.28,281.11
+70551,MRI of brain stem without dye,220,147.32,198.1,222.58,436.54,1122.46,975.14,238.44,322.29,184.4,169.98,492.33
+70553,MRI scan of brain before and after contrast,220,240.92,321.55,357.21,592.46,1679.14,1438.22,270.91,513.02,307.06,277.98,1048.15
+71045,Single view,218,14.46,17.15,19.49,21.23,81.82,67.36,4.08,22.1,10.3,17.05,29.67
+71046,"2 views, front and back",218,21.58,24.9,26.34,32.6,104.56,82.98,7.7,31.29,12.78,24.9,38.91
+71047,3 views,218,27.21,31.59,33.7,41.7,131.83,104.62,10.11,39.76,16.09,31.4,48.93
+71048,4 or more views,218,29.56,34.11,36.14,44.72,143.2,113.64,10.61,42.83,17.48,34.1,52.78
+71101,Radiologic examination of one side of the chest/ribs,220,26.85,32.23,36.14,43.21,130.7,103.85,10.98,40.44,15.91,31.13,48.94
+71250,CT scan of the thorax without dye,220,104.39,133.92,173.61,212.29,561.68,457.29,78.37,193.71,91.42,120.45,278.09
+71260,CT scan of the thorax with dye,220,129.49,168.31,216.85,263.45,695.56,566.07,95.14,238.73,110.84,149.41,325.26
+71275,Diagnostic Radiology (Diagnostic Imaging) Procedures of the Chest,220,200.1,283.57,339.17,401.91,1074.85,874.75,118.34,370.01,163.22,230.88,547.31
+72040,"Radiologic examination of the neck/spine, 2-3 views",220,24.98,30.85,36.42,39.04,121.63,96.65,8.19,37.93,14.96,28.97,45.85
+72050,"Radiologic examination of the neck/spine, 4-5 views",220,33.31,42.32,49.01,52.68,161.4,128.09,10.36,51.21,19.49,38.44,62.03
+72070,"Radiologic examination of the middle spine, 2 views",220,20.88,27.5,30.94,36.38,101.16,80.28,8.88,33.61,12.58,24.09,38.14
+72072,"Radiologic examination of the middle spine, 3 views",220,25.34,31.01,34.31,40.55,122.76,97.42,9.54,38.38,15.1,29.24,45.85
+72100,X-ray of the lower spine 2-3 views,220,25.1,30.4,34.0,39.04,121.63,96.53,8.64,37.91,15.23,28.97,46.24
+72110,"X-ray of lower and sacral spine, minimum of 4 views",220,31.9,41.12,46.26,53.44,154.57,122.67,12.32,50.37,18.83,36.81,60.11
+72131,CT scan of lower spine without dye,220,102.28,129.99,173.29,211.68,635.16,532.88,81.69,194.14,95.08,118.01,278.09
+72141,MRI of the neck or spine without dye,220,143.33,192.54,220.96,390.89,1027.48,884.15,198.35,306.2,171.77,165.38,498.01
+72146,MRI of chest and spine without dye,220,143.33,192.21,220.96,393.95,1054.4,911.07,201.74,311.51,178.8,165.38,543.41
+72148,MRI scan of lower spinal canal,220,143.57,193.2,221.28,388.75,1041.5,897.93,195.55,309.72,176.63,165.65,538.09
+72156,MRI of neck/spine with and without dye,220,242.79,323.19,357.53,591.85,1680.08,1437.29,268.66,514.9,308.78,280.15,1058.44
+72157,MRI of chest and spine with and without dye,220,243.26,323.84,357.85,554.47,1597.74,1354.48,230.63,499.91,290.67,280.69,1019.85
+72158,MRI of lower back with and without dye,220,242.33,322.53,356.57,582.35,1657.84,1415.51,259.82,510.77,305.43,279.61,1048.51
+72170,Radiologic examination of the pelvis,220,18.33,24.51,25.27,31.45,90.92,72.59,6.94,28.58,11.37,21.65,32.36
+72192,CT of pelvis without dye,220,95.95,129.72,137.22,204.94,635.16,539.21,75.22,180.13,94.75,110.71,274.89
+72193,"CT scan, pelvis, with contrast",220,159.75,202.18,230.85,249.36,858.13,698.38,47.18,252.72,117.01,184.33,313.21
+72195,MRI of pelvis without dye,220,175.7,231.5,343.36,433.77,1108.4,932.7,202.27,365.74,178.06,202.73,485.59
+72197,MRI of pelvis before and after dye,220,257.8,340.22,470.26,607.17,1688.68,1430.88,266.95,546.03,286.29,297.47,1019.85
+73000,Radiologic examination of the collar bone,220,19.1,23.82,26.65,31.45,100.02,80.92,7.63,30.14,12.59,23.69,37.76
+73030,Radiologic examination of the shoulder,220,20.65,25.6,28.49,33.73,105.69,85.04,8.13,31.97,12.76,25.17,40.46
+73070,"Radiologic examination, elbow; 2 views",220,18.77,23.24,26.34,30.7,90.92,72.15,7.46,28.65,11.46,21.65,33.9
+73080,"Radiologic examination, elbow; 3 or more views",220,20.41,27.51,31.25,36.38,98.89,78.48,8.87,32.94,12.43,23.55,38.14
+73090,Radiologic examination of the forearm,220,18.84,22.68,25.43,30.32,92.05,73.21,7.64,28.54,11.65,21.92,33.91
+73100,3 or more views,220,20.39,26.14,29.41,34.11,104.56,84.17,7.97,31.92,12.94,24.9,39.3
+73110,Up to 3 views,220,23.6,29.51,34.3,40.93,123.89,100.29,11.42,37.53,15.25,29.5,47.78
+73120,X-ray of the hand with 2 views,220,18.59,23.01,25.73,29.94,96.62,78.03,6.93,29.14,12.24,23.01,36.6
+73130,X-ray of the hand with 3 or more views,220,21.42,26.53,29.72,35.62,111.39,89.97,9.09,33.65,13.87,26.42,43.15
+73140,Radiologic examination of the finger(s),220,18.22,27.07,30.33,36.0,113.66,95.44,8.93,33.46,14.38,25.62,44.31
+73221,MRI of upper extremity without dye,220,151.78,204.98,231.27,409.88,1048.72,896.94,204.9,317.61,174.47,175.13,477.78
+73560,Radiologic examination of the knee with 1 or 2 views,220,20.13,25.6,28.8,33.35,106.82,86.69,7.75,32.02,13.13,25.44,39.69
+73562,Radiologic examination of the knee with 3 views,220,24.0,30.5,34.31,40.55,125.03,101.03,10.05,37.8,15.27,29.78,47.39
+73564,Radiologic examination of the knee with 4 or more views,220,27.87,35.63,40.13,47.0,139.8,111.93,11.37,43.14,17.0,33.29,54.71
+73565,Radiologic examination of both knees,220,21.94,29.51,32.78,38.66,123.89,101.95,9.15,36.25,15.23,28.38,46.24
+73590,Radiologic examination of the lower leg,220,18.84,23.3,25.43,29.94,97.75,78.91,6.64,29.39,12.36,23.28,36.6
+73600,Radiologic examination of the ankle with 2 views,220,18.84,24.09,26.65,31.07,101.16,82.32,6.98,30.11,12.65,24.02,37.38
+73610,Radiologic examination of the ankle with 3 views,220,21.68,27.23,30.64,36.38,111.39,89.71,9.15,33.93,13.81,26.53,42.39
+73620,"Radiologic examination, foot; 2 views",220,18.3,22.33,25.12,29.56,88.65,70.35,7.23,27.8,11.26,21.11,33.14
+73630,Radiologic examination of the foot with 3 or more views,220,21.42,25.87,29.11,34.11,104.56,83.14,8.24,32.17,12.92,24.9,39.69
+73650,Radiologic examination of the heel,220,18.53,23.06,26.04,30.7,89.79,71.26,7.64,28.26,11.32,21.38,33.14
+73660,Radiologic examination of the toe(s),220,18.22,22.78,27.08,32.98,89.79,71.57,10.2,28.96,11.36,21.38,33.91
+73700,CT scan of leg without dye,220,102.28,130.32,173.61,209.23,549.4,447.12,78.91,188.36,85.74,118.01,238.72
+73718,MRI of leg without dye,220,170.07,225.6,333.69,424.58,1421.22,1251.15,198.98,360.68,192.39,196.24,477.78
+73721,MRI of lower extremity joint (knee/ankle) without dye,220,151.07,204.65,231.59,419.07,1066.46,915.39,214.42,321.22,181.22,174.32,477.78
+73722,MRI of lower extremity joint (knee/ankle) with dye,220,241.85,316.96,359.14,454.61,1387.37,1145.52,137.65,422.56,203.75,279.06,573.91
+73723,MRI of lower extremity joint (knee/ankle) with and without dye,220,297.92,389.66,440.31,570.71,1709.01,1411.09,181.05,551.53,287.45,343.76,1019.85
+74022,Serial radiologic examination of the abdomen,220,31.9,39.21,44.11,53.06,154.57,122.67,13.85,48.36,18.61,36.81,57.79
+74150,CT of abdomen without dye,220,98.53,132.76,140.44,209.23,635.16,536.63,76.47,183.11,94.93,113.69,269.93
+74160,CT of abdomen with dye,220,163.27,206.14,235.1,284.9,877.02,713.75,78.76,266.63,122.63,188.39,318.53
+74170,CT of abdomen with and without dye,220,184.15,238.11,264.25,377.41,989.17,805.02,139.3,320.27,147.72,212.48,396.62
+74176,CT of abdomen and pelvis without dye,218,132.07,180.84,188.46,203.72,744.28,612.21,22.88,206.9,97.99,152.39,225.95
+74177,CT scan of abdomen and pelvis with contrast,218,216.05,278.31,305.82,321.97,1160.57,944.52,43.66,325.11,147.07,249.29,355.06
+74178,"Computed tomography, abdomen and pelvis; without contrast material in one or both body regions, followed by contrast material(s) and further sections in one or both body regions",218,242.79,323.98,343.15,408.96,1304.22,1061.43,84.98,385.15,167.79,280.15,449.41
+74181,MRI of abdomen without dye,220,148.73,197.78,306.0,386.29,1019.85,871.12,188.51,327.73,166.64,171.61,485.94
+74183,MRI of abdomen without and with dye,220,258.28,341.53,471.87,608.7,1690.1,1431.82,267.17,547.09,286.33,298.01,1019.85
+76000,"Flouroscopy, or x-ray ""movie"" that takes less than an hour",220,27.68,40.46,50.94,59.12,187.5,159.82,18.66,54.59,23.83,31.94,74.15
+76512,Ultrasound of the eye,220,34.95,57.25,80.69,83.63,214.55,179.6,26.38,78.49,32.74,40.33,110.48
+76514,A diagnostic procedure that allows a provider to see the organs and other structures in the abdomen,220,7.98,11.55,13.18,14.41,214.55,206.57,2.86,15.49,19.77,9.2,17.92
+76536,Ultrasound of head and neck,220,68.1,88.51,110.9,140.29,397.41,329.31,51.78,119.51,49.11,88.51,143.83
+76642,Limited ultrasound of the breast,218,57.94,71.39,77.19,105.05,300.19,242.25,33.66,91.57,38.14,66.86,108.07
+76700,Ultrasound of abdomen with all areas scanned,220,81.4,112.34,129.28,147.91,421.72,340.32,35.57,135.89,52.73,93.92,166.34
+76705,A diagnostic procedure that allows a provider to see the organs and other structures in the abdomen,220,60.29,83.69,98.95,110.62,312.34,252.05,26.93,102.68,40.03,69.56,127.99
+76770,Ultrasound of back wall of the abdomen with all areas viewed,220,74.83,103.77,122.54,137.74,387.71,312.88,33.97,127.59,48.84,86.35,156.75
+76775,Ultrasound of back wall of the abdomen with limited areas viewed,220,38.94,56.17,76.0,101.09,219.16,180.22,44.92,80.28,35.33,44.93,109.65
+76801,Abdominal ultrasound of pregnant uterus (less than 14 weeks) single or first fetus,220,80.93,105.38,118.56,148.84,419.3,338.37,43.46,130.79,51.78,93.38,149.18
+76805,Abdominal ultrasound of pregnant uterus (greater or equal to 14 weeks 0 days) single or first fetus,220,92.66,121.9,137.24,172.18,480.05,387.39,50.28,148.45,58.53,106.91,172.49
+76811,Ultrasound of single fetus,220,117.53,154.66,174.0,225.47,608.9,491.37,70.81,196.87,78.01,135.61,250.53
+76813,Evaluation through measurement of fetal nuchal translucency,220,80.23,102.38,115.18,142.57,415.66,335.43,40.19,127.57,51.34,92.57,147.07
+76815,Ultrasound of fetus with limited views,220,55.59,74.18,83.93,102.99,288.03,232.44,28.81,91.68,37.04,64.15,106.31
+76817,Transvaginal ultrasound of uterus,220,63.34,84.01,94.66,117.82,328.14,264.8,33.81,103.21,41.22,73.08,119.65
+76818,Fetal biophysical profile with non-stress test,220,78.12,100.48,113.04,143.83,404.72,326.6,43.35,125.69,49.99,90.14,150.87
+76819,Fetal biophysical profile without non-stress test,220,57.47,74.34,83.63,105.47,297.76,240.29,31.13,94.52,38.47,66.32,108.92
+76830,Ultrasound of the pelvis through vagina,220,77.06,96.33,116.1,148.84,421.72,344.66,52.51,126.51,51.68,93.92,151.73
+76831,A diagnostic procedure that allows a provider to see the uterus,220,78.26,97.82,117.32,145.91,408.36,330.1,48.09,124.97,50.33,90.95,147.91
+76856,Complete ultrasound of the pelvis,220,72.49,95.94,114.88,133.93,375.55,303.06,37.99,119.83,46.68,83.64,146.33
+76857,Limited ultrasound of the pelvis,220,32.14,46.18,63.37,90.98,214.55,182.41,44.81,70.18,33.62,37.08,107.14
+76870,Ultrasound of the scrotum,220,51.29,80.12,93.72,114.26,359.76,308.47,34.14,105.08,47.05,63.64,127.15
+76872,Transrectal ultrasound,220,71.43,109.23,119.91,148.83,538.41,466.98,39.6,144.47,79.13,79.78,255.99
+76882,"Diagnostic ultrasound of an extremity excluding the bone, joints or vessels",218,22.97,31.25,42.11,43.79,214.55,191.58,12.54,48.01,32.02,30.75,80.53
+77047,"Magnetic resonance imaging, breasts, without contrast material; bilateral",218,166.08,221.02,496.03,645.15,1303.14,1137.06,424.13,494.02,273.3,191.63,928.22
+77065,Mammography of one breast,218,88.67,107.97,115.18,156.76,466.35,377.68,48.79,138.42,57.95,102.32,160.04
+77066,Mammography of both breasts,218,111.66,136.83,146.12,198.86,587.26,475.6,62.03,175.2,73.04,128.84,203.03
+77067,Mammography of both breasts-2 or more views,218,90.55,110.56,117.94,160.51,476.23,385.68,49.95,141.55,59.2,104.48,163.88
+77080,Scan to measure bone mineral density (BMD) at the spine and hip,220,26.04,32.92,42.02,51.16,142.85,116.81,18.24,48.97,24.66,30.05,80.4
+77385,Radiation therapy delivery,218,239.51,303.89,341.87,511.9,1188.09,948.58,208.01,408.57,159.29,276.35,528.65
+77386,Radiation therapy delivery,218,240.45,304.7,342.79,514.3,1192.77,952.32,209.6,409.91,159.9,277.44,530.07
+77387,Guidance for localization of target delivery of radiation treatment delivery,218,45.69,54.23,73.89,83.85,317.67,271.98,29.62,87.47,53.2,53.9,184.91
+77412,Radiation treatment delivery,220,73.78,197.86,219.03,319.28,850.63,776.85,121.42,250.83,114.56,197.54,331.79
+78014,Scan using a radioactive medication (radiopharmaceutical) to take pictures or images of the thyroid gland.,218,160.92,198.96,215.48,218.42,798.26,637.34,19.46,232.15,96.12,185.68,266.22
+78306,"A procedure most commonly ordered to detect areas of abnormal bone growth due to fractures, tumors, infection, or other bone issues",220,168.55,218.76,231.89,241.11,1003.08,834.53,22.35,259.36,123.16,210.09,268.76
+78452,Image of the heart to assess perfusion,218,314.64,402.74,437.41,453.08,1562.8,1248.16,50.34,484.01,202.11,363.51,678.55
+78815,"Tumor imaging, positron emission tomography (PET) with concurrently acquired computed tomography (CT) for attenuation correction and anatomical localization",220,802.69,1004.55,1095.14,1599.57,4951.27,4148.58,595.02,1410.73,789.77,903.02,2115.89
+80048,Basic metabolic panel,60,5.03,5.03,5.03,5.03,14.83,9.8,0.0,5.8,2.27,5.03,6.21
+80050,General health panel,226,10.5,16.58,17.9,19.86,47.7,37.2,3.28,18.3,4.9,15.31,19.86
+80051,"Blood test panel for electrolytes (sodium potassium, chloride, carbon dioxide)",9,5.04,5.04,9.8,9.8,12.29,7.25,4.76,8.36,3.06,5.04,12.29
+80053,"Blood test, comprehensive group of blood chemicals",107,5.3,6.05,6.29,6.29,18.53,13.23,0.24,6.72,2.21,6.05,6.35
+80055,Obstetric blood test panel,226,16.73,20.08,22.31,24.79,69.42,52.69,4.71,23.65,7.38,19.12,26.55
+80061,"Blood test, lipids (cholesterol and triglycerides)",225,5.09,5.62,7.35,7.97,23.48,18.39,2.35,7.06,2.41,5.62,7.97
+80069,Kidney function panel test,73,5.09,5.17,5.17,5.17,15.22,10.13,0.0,5.8,2.13,5.09,6.22
+80074,Acute hepatitis panel,226,16.67,20.0,27.23,28.34,83.45,66.78,8.34,25.48,8.77,19.05,28.62
+80076,Liver function blood test panel,10,5.47,5.86,9.29,11.42,14.32,8.85,5.56,9.31,3.63,5.82,14.32
+80081,"Blood test panel for obstetrics (cbc, differential wbc count, hepatitis b, hiv, rubella, syphilis, antibody screening, rbc, blood typing)",224,26.2,31.44,42.83,42.83,101.97,75.77,11.39,38.92,10.64,29.35,44.29
+80197,Test is used to measure the amount of the drug in the blood to determine whether the concentration has reached a therapeutic level and is below the toxic level,225,5.22,5.77,7.86,8.17,34.3,29.08,2.4,8.67,6.58,5.77,8.25
+80307,Testing for presence of drug,224,19.91,26.1,31.85,33.52,79.81,59.9,7.42,30.96,8.97,23.61,33.58
+81000,Manual urinalysis test with examination using microscope,2,5.56,5.56,5.56,5.56,5.56,0.0,0.0,5.56,0.0,5.56,5.56
+81001,Manual urinalysis test with examination with or without using microscope,2,5.56,5.56,5.56,5.56,5.56,0.0,0.0,5.56,0.0,5.56,5.56
+81025,Urine pregnancy test,185,5.17,5.17,5.17,5.38,11.09,5.92,0.21,5.42,0.88,5.17,5.38
+82043,Urine test to measure albumin,18,5.07,8.4,8.4,8.4,9.76,4.69,0.0,8.31,0.94,8.09,8.81
+82044,Urine test to measure albumin-semiquantitative,8,6.23,6.35,6.39,7.02,8.02,1.79,0.66,6.79,0.77,6.23,8.02
+82248,Measurement of direct bilirubin,5,7.02,7.02,7.02,8.8,8.8,1.78,1.78,7.73,0.97,7.02,8.8
+82306,Blood test to monitor vitamin D levels,226,10.36,12.43,16.93,17.61,47.6,37.24,5.18,16.31,6.08,11.84,17.78
+82553,Blood test to detect heart enzymes,117,5.2,6.62,6.87,6.87,16.13,10.93,0.25,7.0,1.7,5.79,6.93
+82570,Test to measure creatinine in the urine,5,7.23,7.23,7.23,9.07,9.07,1.84,1.84,7.97,1.01,7.23,9.07
+82607,Blood test to measure B-12,226,5.28,6.33,7.04,8.97,26.41,21.13,2.64,7.84,2.73,6.02,8.97
+82627,Blood test to measure an enzyme in the blood,226,7.78,9.34,11.55,13.23,38.95,31.17,3.89,11.68,3.99,8.9,13.23
+82670,Blood test to measure a type of estrogen in the blood,226,10.62,11.73,15.99,16.62,48.96,38.34,4.89,15.33,5.63,11.73,17.76
+82728,Test to determine level of iron in the blood,225,5.18,5.72,7.8,8.11,23.87,18.69,2.39,7.24,2.46,5.72,8.19
+82784,Test to determine levels of immunoglobulins in the blood,115,5.31,5.33,5.53,5.53,16.3,10.99,0.2,6.1,1.9,5.33,7.35
+82803,Test to measure arterial blood gases,226,9.12,10.95,11.07,11.51,33.9,24.78,0.56,11.63,2.93,9.91,12.6
+82947,Quantitative measure of glucose build up in the blood over time,6,5.48,5.48,5.6,6.59,6.88,1.4,1.11,5.99,0.7,5.48,6.88
+82950,Test of glucose level in the blood,6,6.64,6.64,6.78,7.97,8.32,1.68,1.33,7.25,0.84,6.64,8.32
+82951,Test to predict likelihood of gestational diabetes,203,5.25,7.72,9.24,10.94,22.56,17.31,3.22,9.41,2.52,7.72,10.94
+83001,Test of hormone in the blood,226,7.06,7.8,9.45,11.05,32.57,25.51,3.25,9.81,3.41,7.8,11.05
+83002,Test of hormone in the blood,226,5.25,7.78,8.64,11.02,32.45,27.2,3.24,9.56,3.54,7.04,11.02
+83013,Test of breath for a stomach bacterium,226,23.58,28.29,38.52,40.07,118.02,94.44,11.78,38.46,17.73,26.94,40.47
+83036,Blood test to measure average blood glucose levels for past 2-3 months,117,5.04,5.56,5.78,5.78,17.0,11.96,0.22,6.36,1.98,5.56,7.75
+83516,Chemical test of the blood to measure presence or concentration of a substance in the blood,129,5.19,6.61,6.86,6.86,20.22,15.03,0.25,7.67,2.75,5.98,12.6
+83540,Blood test to measure the amount of iron that is in transit in the body,6,5.68,9.05,9.05,10.78,11.35,5.67,1.72,9.26,2.08,7.36,11.35
+83550,Blood test that measures the amount of iron carried in the blood,103,5.0,5.01,5.2,5.2,15.32,10.32,0.19,5.6,1.84,5.01,5.26
+83655,Blood test to determine the concentration of lead in the blood,203,5.09,5.09,6.94,7.2,21.2,16.11,2.11,6.62,2.21,5.09,7.35
+83718,Blood test to measure the level of lipoproteins in the blood,10,5.49,5.87,9.31,11.44,14.35,8.86,5.57,9.33,3.64,5.83,14.35
+83880,Blood test used to diagnose heart failure,226,13.65,16.49,16.49,20.19,59.47,45.82,3.7,18.63,5.7,14.92,20.19
+84134,Blood test to measure level of prealbumin,226,5.11,6.13,8.34,8.67,20.38,15.27,2.54,7.66,2.15,5.84,8.76
+84153,PSA (prostate specific antigen),226,6.44,7.72,10.52,10.95,32.22,25.78,3.23,9.9,3.45,7.36,11.04
+84154,PSA (prostate specific antigen) measurement,226,6.44,7.72,10.52,10.95,32.22,25.78,3.23,9.88,3.42,7.36,11.04
+84436,Blood test to measure a type of thyroid hormone,6,6.02,9.61,9.61,11.43,12.04,6.02,1.82,9.82,2.21,7.82,12.04
+84439,Blood test to evaluate thyroid function,115,5.15,5.17,5.36,5.36,15.8,10.65,0.19,5.83,1.81,5.17,6.3
+84443,"Blood test, thyroid stimulating hormone (TSH)",226,5.88,7.06,9.45,10.0,29.44,23.56,2.94,8.86,3.02,6.72,10.0
+84460,Blood test to evaluate liver function,5,7.4,7.4,7.4,9.28,9.28,1.88,1.88,8.15,1.03,7.4,9.28
+84480,Blood test to evaluate thyroid function,225,5.39,5.96,6.62,8.43,24.84,19.45,2.47,7.4,2.56,5.96,8.43
+84484,Blood test to measure a certain protein in the blood to determine heart muscle damage,201,5.24,5.24,5.64,5.85,44.1,38.86,0.61,8.13,9.22,5.24,7.48
+84703,Blood test to assess for pregnancy,10,5.03,5.39,8.54,10.49,13.16,8.13,5.1,8.56,3.33,5.35,13.16
+85007,Blood test to assess for infection,2,6.02,6.02,6.02,6.02,6.02,0.0,0.0,6.02,0.0,6.02,6.02
+85025,"Complete blood cell count, with differential white blood cells, automated",10,5.21,5.57,8.83,10.86,13.62,8.41,5.29,8.86,3.45,5.53,13.62
+85027,"Complete blood count, automated",6,5.67,9.04,9.04,10.76,11.34,5.67,1.73,9.24,2.08,7.36,11.34
+85610,"Blood test, clotting time",6,5.49,5.49,5.62,6.6,6.89,1.4,1.11,6.0,0.7,5.49,6.89
+85730,Coagulation assessment blood test,6,5.26,8.38,8.38,9.98,10.51,5.25,1.6,8.57,1.93,6.82,10.51
+86039,Blood test to determine autoimmune disorders,129,5.02,6.4,6.64,6.64,19.56,14.54,0.24,6.97,2.18,5.79,7.35
+86147,Blood test to determine cause of inappropriate blood clot formation,226,5.25,10.69,11.88,15.14,35.54,30.29,4.45,12.66,3.9,9.67,15.14
+86200,Blood test to diagnose rheumatoid arthritis,203,5.44,5.44,7.42,7.7,22.69,17.25,2.26,7.24,2.5,5.44,9.16
+86300,Blood test to monitor breast cancer,226,7.28,8.74,11.89,12.38,36.46,29.18,3.64,11.12,3.84,8.15,12.5
+86304,Blood test to monitor for cancer,226,7.28,8.74,11.89,12.38,36.46,29.18,3.64,11.12,3.84,8.15,12.5
+86336,Blood test to monitor for cancer in the ovaries or testis,226,5.46,6.55,8.91,9.27,31.37,25.91,2.72,9.42,5.91,6.24,9.36
+86592,Blood test to screen for syphilis,5,5.96,5.96,5.96,7.48,7.48,1.52,1.52,6.57,0.83,5.96,7.48
+86644,Blood test to monitor for cytomegalovirus,226,5.04,6.04,6.72,8.56,25.22,20.18,2.52,7.44,2.64,5.47,8.56
+86665,Blood test to diagnose mononucleosis,226,5.25,7.62,8.47,10.79,31.78,26.53,3.17,9.29,3.4,6.89,10.79
+86677,Blood test to if peptic ulcers are caused by a certain bacterium,226,5.25,7.08,7.08,8.64,20.28,15.03,1.56,7.85,1.92,6.4,8.64
+86703,Blood test to diagnose HIV,225,5.21,5.76,6.4,8.16,24.02,18.81,2.4,7.11,2.5,5.25,8.16
+86704,Blood test indicating infection with Hepatitis B,203,5.06,5.06,6.9,7.17,21.12,16.06,2.11,6.59,2.2,5.06,7.35
+86708,Blood test indicating infection with Hepatitis A,203,5.2,5.2,7.1,7.37,21.71,16.51,2.17,6.95,2.43,5.2,8.76
+86762,Blood test to determine if antibodies exist for rubella,226,5.04,6.04,6.72,8.56,25.22,20.18,2.52,7.44,2.64,5.47,8.56
+86765,Blood test to determine if antibodies exist for measles,203,5.25,5.41,7.36,7.67,22.57,17.32,2.26,6.89,2.38,5.41,7.67
+86780,Blood test to determine existence of certain bacterium that causes syphilis,223,5.03,5.56,6.18,7.88,18.97,13.94,2.32,6.75,1.91,5.25,7.94
+86803,Blood test to determine infection with Hepatitis C,225,5.42,5.99,6.66,8.49,25.01,19.59,2.5,7.44,2.58,5.99,8.49
+86850,Blood test to screen for antibodies that could harm red blood cells,113,5.25,6.86,6.86,7.22,17.89,12.64,0.36,7.25,2.23,5.28,7.36
+87040,Blood test to screen for bacteria in the blood,119,5.18,5.92,6.14,6.14,18.08,12.9,0.22,6.96,2.36,5.92,10.5
+87046,Blood test to identify bacteria that may be contributing to symptoms in the gastrointestinal tract,115,5.4,5.41,5.61,5.61,16.52,11.12,0.2,6.1,1.89,5.41,6.6
+87070,Test of body fluid other than blood to assess for bacteria,85,5.05,5.12,5.12,5.25,15.08,10.03,0.13,5.68,1.97,5.05,6.02
+87077,Test of a wound for type of bacterial infection,22,5.41,7.8,7.8,7.8,14.16,8.75,0.0,8.44,2.46,5.79,11.29
+87081,Medical test to find an infection,6,5.81,9.26,9.26,11.04,11.63,5.82,1.78,9.48,2.14,7.54,11.63
+87086,Culture of the urine to determine number of bacteria,22,5.41,6.3,6.3,6.88,14.15,8.74,0.58,7.62,2.77,5.79,11.28
+87088,Culture of the urine to determine bacterial infection,10,5.42,5.8,9.2,11.31,14.18,8.76,5.51,9.22,3.6,5.76,14.18
+87101,A procedure used to determine if fungi are present in an area of the body,22,5.17,8.4,8.4,8.4,13.51,8.34,0.0,8.57,2.25,5.52,10.77
+87186,A test used to determine which medications work on bacteria for fungi,84,5.07,5.15,5.15,5.25,15.14,10.07,0.1,5.71,1.98,5.07,6.08
+87205,A lab test used to detect bacteria or fungi in a sample taken from the site of a suspected infection,5,5.96,5.96,5.96,7.48,7.48,1.52,1.52,6.57,0.83,5.96,7.48
+87210,A lab test to screen for evidence of vaginal infection,8,5.82,5.92,5.96,6.54,7.48,1.66,0.62,6.34,0.72,5.82,7.48
+87324,A test of the stool to diagnose Clostridium difficile (C. diff) infection,203,5.03,5.03,6.87,7.14,21.02,15.99,2.11,6.96,2.82,5.03,8.49
+87389,Test for HIV,224,8.43,10.11,13.76,14.33,34.12,25.69,4.22,12.63,3.5,9.44,14.41
+87491,Test that detects Chlamydia,226,12.28,14.74,20.07,20.88,61.5,49.22,6.14,20.06,9.32,14.04,21.08
+87510,Blood test for vaginitis,226,7.02,8.42,11.46,11.93,35.12,28.1,3.51,11.64,5.91,8.02,12.04
+87591,Blood test for an STD,226,12.28,14.74,20.07,20.88,61.5,49.22,6.14,20.06,9.32,14.04,21.08
+87624,Detection test for human papillomavirus (hpv),224,12.28,14.74,20.06,20.06,55.13,42.85,5.32,19.8,9.61,13.75,20.76
+87653,Blood test for strep infection,226,12.28,14.74,20.07,20.88,61.5,49.22,6.14,20.39,10.38,14.04,21.08
+87661,Blood test for an STD,224,12.28,14.74,20.06,20.11,55.13,42.85,5.37,19.79,9.59,13.75,20.77
+87801,Blood test to determine genetic material of certain infectious agents,226,24.57,29.48,40.14,41.76,122.99,98.42,12.28,38.91,15.24,28.08,42.18
+87804,Flu test,199,5.79,14.0,14.0,14.0,21.02,15.23,0.0,13.36,2.93,6.29,16.59
+87807,Test for RSV,203,5.5,5.5,6.87,7.14,21.02,15.52,1.64,7.3,3.17,5.5,8.5
+87880,Test for strep A,226,5.79,9.82,9.92,10.19,21.02,15.23,0.37,10.2,2.51,7.01,10.19
+88112,Urine test,248,23.77,40.02,41.14,61.47,199.36,175.59,21.45,52.25,26.33,37.83,63.67
+88141,Cervical cancer screening test with interpretation,248,8.39,15.81,17.56,19.13,53.7,45.31,3.32,17.43,5.04,11.47,20.24
+88142,PAP smear,248,7.09,12.16,16.58,17.22,59.16,52.07,5.06,15.53,5.77,12.16,17.55
+88150,Cervical cancer screening test done manually,248,6.22,8.65,8.98,9.07,30.84,24.62,0.42,9.39,2.67,7.0,12.33
+88175,PAP smear,248,9.31,15.97,21.68,22.51,77.36,68.05,6.54,20.74,8.16,15.97,22.94
+88305,Test of tissues for diagnosis of abnormalities,248,25.05,42.88,44.59,61.4,205.2,180.15,18.52,50.25,20.2,42.16,63.52
+88312,Blood test to assist with diagnosis,248,21.5,56.16,57.8,64.31,192.94,171.44,8.15,59.88,18.97,42.75,78.14
+88313,Blood test to assist with diagnosis,248,13.52,39.41,41.61,46.34,140.8,127.28,6.93,42.96,14.28,31.5,57.56
+88342,Pathology test,248,37.05,53.09,63.31,64.31,193.98,156.93,11.22,61.49,17.42,44.98,73.51
+90460,Immunization administration in children <18,218,9.39,14.44,22.06,30.57,42.95,33.56,16.13,22.49,7.65,12.27,32.97
+90471,Immunization administration by a medical assistant or nurse,220,6.57,12.27,21.32,25.68,41.36,34.79,13.41,20.78,7.62,12.27,32.91
+90474,Immunization administered orally or nasally,220,7.36,10.41,11.04,16.45,20.16,12.8,6.04,12.49,3.02,10.41,17.2
+90632,Hepatitis A vaccination for adults,196,52.6,89.01,94.6,95.49,99.33,46.73,6.48,90.2,8.8,76.87,95.49
+90633,Hepatitis A vaccination for adolescents and children,196,24.62,41.67,42.2,44.7,44.7,20.08,3.03,41.69,3.91,35.99,44.7
+90649,3-dose HPV vaccination,196,107.24,181.48,192.05,194.68,201.65,94.41,13.2,183.76,17.72,156.73,194.68
+90656,Flu shot-high dose for 2019-2020 flu season given by injection,196,13.29,22.94,24.12,24.37,25.59,12.3,1.43,22.93,2.27,19.42,24.37
+90658,Preservative free flu vaccine,196,12.76,22.03,23.16,23.88,25.07,12.31,1.85,22.15,2.27,18.65,23.88
+90672,Nasal flu vaccine,196,16.06,27.64,29.15,29.25,30.71,14.65,1.62,27.66,2.72,23.47,29.25
+90681,Rotavirus vaccination,196,90.18,152.61,163.71,166.34,174.66,84.48,13.73,155.84,15.63,131.8,166.34
+90686,Flu shot-high dose for 2019-2020 flu season given by injection for people >65,196,14.53,23.95,23.95,26.37,26.37,11.84,2.42,24.34,2.31,21.23,26.37
+90707,"Measles, mumps and rubella vaccine",196,60.12,101.74,109.14,110.54,116.07,55.95,8.8,103.78,10.37,87.87,110.54
+90710,"measlesMeasles, mumps, rubella and varicella vaccine",196,175.6,297.17,318.78,323.58,339.76,164.16,26.41,303.36,30.38,256.64,323.58
+90715,"Diphtheria, tetanus acellular, and pertussis vaccine for adults",196,32.69,55.32,55.86,59.34,59.34,26.65,4.02,55.25,5.29,47.78,59.34
+90716,Varicella vaccine,196,113.31,191.75,205.7,209.04,219.49,106.18,17.29,195.79,19.67,165.6,209.04
+90732,pneumococcal Pneumococcal vaccine,196,76.1,131.42,138.15,140.5,147.53,71.43,9.08,131.61,13.19,111.23,140.5
+90734,meningococcal Meningococcal conjugate vaccine,196,102.28,173.09,181.79,185.67,190.88,88.6,12.58,174.92,16.71,149.48,185.67
+90736,Shingles vaccine,196,142.38,240.96,255.2,258.48,267.96,125.58,17.52,244.04,23.55,208.1,258.48
+90746,Hepatitis B vaccine,196,44.3,74.98,80.15,80.43,84.16,39.86,5.45,76.15,7.41,64.75,80.43
+90791,"A diagnostic tool employed by a psychiatrist to diagnose problems with memory, thought processes, and behaviors",218,94.54,113.88,135.71,175.78,498.64,404.1,61.9,159.86,71.0,109.08,247.03
+90792,A diagnostic tool employed by a psychiatrist to determine if medications are needed,218,99.39,117.37,122.71,187.02,551.85,452.46,69.65,161.29,82.51,111.82,278.07
+90832,"Psychotherapy, 30 min",218,46.22,54.28,56.37,85.07,243.77,197.55,30.79,73.04,34.05,53.33,112.29
+90833,"Psychotherapy, 30 minutes with patient when performed with an evaluation and management service",218,33.22,45.55,54.68,79.67,249.94,216.72,34.12,65.38,36.77,37.38,103.2
+90834,"Psychotherapy, 45 min",218,61.46,70.91,73.07,112.79,324.16,262.7,41.88,96.0,45.34,70.91,148.12
+90836,"Psychotherapy, 45 minutes with patient when performed with an evaluation and management service",218,53.91,65.83,71.26,107.9,316.76,262.85,42.07,88.09,43.88,60.65,130.43
+90837,"Psychotherapy, 60 min",218,91.96,106.1,109.31,168.72,485.03,393.07,62.62,142.37,67.64,106.1,218.35
+90838,"Psychotherapy, 60 minutes",218,78.82,94.09,98.03,145.23,415.74,336.92,51.14,123.41,55.65,90.95,172.96
+90839,"Psychotherapy for crisis, first 60 minutes",218,95.95,114.19,159.4,177.01,506.08,410.13,62.82,163.17,67.05,110.71,210.24
+90840,Psychotherapy for crisis,218,45.98,54.81,82.55,91.67,242.53,196.55,36.86,80.95,32.97,53.06,104.16
+90846,"Family psychotherapy, not including patient, 50 min",220,65.62,77.69,88.6,136.76,355.12,289.5,59.07,103.69,48.25,73.83,139.99
+90847,"Family psychotherapy, including patient, 50 min",220,69.67,87.85,91.9,141.0,367.5,297.83,53.15,113.75,48.89,80.39,146.68
+90853,Group psychotherapy,220,18.3,22.53,28.18,34.78,96.51,78.21,12.25,30.65,12.88,21.11,39.66
+92002,Intermediate exam,220,55.56,64.15,70.77,106.91,215.69,160.13,42.76,82.19,23.7,64.06,121.36
+92004,Complete exam,220,99.23,115.73,130.19,190.83,384.98,285.75,75.1,148.77,41.62,114.5,213.09
+92012,Eye exam on an established patient,220,50.78,67.4,74.44,112.33,226.61,175.83,44.93,85.83,25.22,66.2,127.58
+92014,Eye exam and treatment for established patient,220,74.67,96.09,107.83,160.15,323.09,248.42,64.06,123.45,35.59,96.04,180.12
+92083,An eye examination that can detect dysfunction in central and peripheral vision,220,41.76,55.42,75.01,85.54,162.0,120.24,30.12,71.8,19.17,48.18,90.79
+92133,Optic nerve imaging,218,24.63,35.94,40.44,52.08,95.55,70.92,16.14,43.0,11.54,28.42,59.22
+92507,Therapy for speech or hearing,220,49.88,60.9,67.39,105.75,278.39,228.51,44.85,81.53,36.89,60.28,109.42
+92523,Evaluation of speech sound production with evaluation of language comprehension,218,129.02,158.7,164.81,252.86,680.52,551.5,94.16,211.83,95.94,148.87,326.82
+92552,Type of hearing test,220,14.34,24.09,26.65,40.42,110.12,95.78,16.33,32.49,16.28,21.48,54.47
+93000,Routine EKG using at least 12 leads including interpretation and report,220,11.26,14.31,17.15,22.09,59.38,48.12,7.78,19.35,8.19,12.99,26.54
+93015,Test to determine heart abnormalities,220,46.92,64.55,79.65,103.2,232.74,185.82,38.65,86.36,34.12,54.14,112.44
+93303,Test to screen the heart for abnormalities,220,154.36,183.89,203.41,313.96,765.7,611.34,130.07,242.32,102.76,178.1,314.39
+93306,"Ultrasound examination of heart including color-depicted blood flow rate, direction, and valve function",220,137.47,179.77,194.88,281.41,681.93,544.46,101.64,238.76,97.3,158.62,306.6
+93307,Echo without doppler study,220,93.6,112.66,119.17,191.52,464.31,370.71,78.86,155.21,67.81,108.0,222.67
+93320,Echo with doppler,220,35.43,46.2,48.71,72.63,175.73,140.3,26.43,62.58,27.51,40.88,88.86
+93350,Stress test with echocardiogram,220,118.58,161.75,186.87,265.65,623.73,505.15,103.9,218.22,88.14,145.08,317.72
+93452,Insertion of catheter into left heart for diagnosis,366,550.0,794.33,1172.65,5153.0,16155.0,15605.0,4358.67,3035.24,3440.11,701.31,5775.0
+93798,Use of EKG to monitor cardiac rehabilitation,220,16.89,20.75,22.67,32.43,89.07,72.18,11.68,27.56,11.94,19.49,36.79
+93880,Study of vessels on both sides of the head and neck,220,132.31,163.21,227.0,251.92,697.87,565.56,88.71,227.69,94.11,152.66,272.86
+93922,Limited bilateral noninvasive physiologic studies of upper or lower extremity arteries,220,56.3,75.82,93.74,117.03,296.98,240.68,41.21,100.33,41.97,64.97,124.26
+93970,Complete bilateral study of the extremities,220,129.25,160.47,234.96,247.69,681.76,552.51,87.22,226.63,93.21,149.14,269.95
+93971,One sided or limited bilateral study,220,80.7,97.44,139.69,150.4,425.65,344.95,52.96,141.55,59.77,93.11,172.14
+94010,Test to determine how well oxygen moves from the lungs to the blood stream,220,23.46,28.86,32.47,39.19,123.73,100.27,10.33,36.78,15.71,27.07,47.47
+94060,Test to determine if wheezing is present,220,39.18,48.74,54.84,58.14,206.64,167.46,9.4,60.97,26.32,45.2,79.9
+94375,Graphical representation of inspiration and expiration,220,25.81,31.31,35.23,51.71,136.11,110.3,20.4,41.66,18.05,29.78,55.91
+94726,Measures how much air is in the lungs after taking a deep breath,218,35.43,45.37,48.4,70.04,186.85,151.42,24.67,58.49,25.01,40.88,80.26
+94727,Measure of lung function and gas exchange,218,28.85,35.89,37.99,55.46,152.19,123.34,19.57,46.61,20.29,33.29,64.03
+94729,Test to measure how well gases diffuse across lung surfaces,218,37.3,46.0,48.1,71.44,196.73,159.43,25.44,59.57,26.15,43.04,81.23
+95004,Allergy test,148,5.1,5.48,5.82,7.07,13.96,8.86,1.59,6.57,1.92,5.25,8.46
+95115,Allergy shot-1 shot,220,6.1,7.62,8.88,12.54,30.24,24.14,4.92,10.73,4.5,7.04,14.93
+95117,Multiple allergy shots,220,7.04,8.83,10.72,15.58,34.92,27.88,6.75,12.78,5.45,8.12,19.42
+95810,Sleep monitoring of patient (6 years or older) in sleep lab,220,403.72,527.99,596.44,814.98,2129.44,1725.72,286.99,703.24,296.86,465.83,899.53
+95811,Sleep monitoring of patient (6 years or older) in sleep lab using CPAP,220,421.78,553.88,635.96,854.93,2224.72,1802.94,301.05,745.0,315.24,486.67,944.46
+95860,Test to measure electrical activity of muscles or nerves in 1 limb,220,67.55,86.39,92.71,159.32,420.68,353.13,72.93,118.3,57.11,86.39,161.02
+95861,Test to measure electrical activity of muscles or nerves in 2 limb,220,92.0,125.6,132.44,221.38,602.59,510.59,95.78,166.86,81.72,115.0,228.38
+95886,Test to assess for nerve damage,218,64.51,75.81,78.73,120.78,340.28,275.77,44.97,100.32,45.26,74.44,137.61
+96110,Childhood test to screen for developmental disabilities,220,5.9,7.58,8.88,13.71,34.66,28.76,6.13,11.12,5.33,7.0,16.72
+96365,"Intravenous infusion, for therapy, prophylaxis, or diagnosis-initial infusion",220,46.92,58.0,65.25,89.83,247.47,200.55,31.83,75.24,31.88,54.14,90.24
+96366,"Intravenous infusion, for therapy, prophylaxis, or diagnosis-additional infusions",220,14.24,16.51,19.3,24.64,75.46,61.22,8.12,22.66,10.03,15.84,29.15
+96374,"Intravenous infusion, for therapy, prophylaxis, or diagnosis-IV push",220,26.04,42.97,50.24,56.75,137.35,111.31,13.78,52.25,19.98,30.05,73.79
+96375,"Intravenous infusion, for treatment, prophylaxis, or diagnosis-new drug add on",220,10.79,16.94,20.21,25.25,56.91,46.12,8.31,21.6,8.42,12.45,29.14
+96376,"Intravenous infusion, for treatment, prophylaxis, or diagnosis-same drug add on",220,6.57,10.62,12.26,13.85,34.66,28.09,3.23,12.97,4.93,7.58,17.86
+96415,Chemotherapy infusion-each additional hour,220,19.94,23.75,27.57,36.66,98.92,78.98,12.91,32.48,13.38,23.01,42.35
+96417,Chemotherapy infusion-additional IV pushes of the same medication,220,45.04,52.67,64.03,81.31,223.42,178.38,28.64,73.16,29.95,51.97,91.84
+97010,Use of external hot or cold packs,138,5.18,5.53,5.53,7.99,10.42,5.24,2.46,6.57,1.59,5.18,9.07
+97012,Form of decompression therapy of the spine,220,10.09,13.19,13.31,17.39,28.66,18.57,4.2,15.14,3.43,12.53,21.15
+97014,One time use unattended,220,9.62,12.58,13.02,16.45,26.46,16.84,3.87,14.54,3.13,12.26,21.15
+97016,"Machines designed to pump cold water into an inflatable wrap or brace, compressing the enveloped area of the body",220,8.21,10.74,15.62,16.72,30.0,21.79,5.98,15.41,4.44,10.74,25.37
+97026,Light-based method to treat pain and inflammation,140,5.18,5.53,5.53,7.99,10.98,5.8,2.46,6.65,1.74,5.18,9.56
+97032,Repeated application to one or more parts of the body,220,9.85,12.89,15.62,18.94,32.22,22.37,6.05,16.62,4.21,12.89,25.37
+97033,Psychiatric treatment in which seizures are electrically induced in patients to provide relief from mental disorders,220,13.84,18.1,26.04,27.72,47.84,34.0,9.62,25.38,7.53,18.1,42.77
+97035,"Use of sound waves to treat medical problems, especially musculoskeletal problems like inflammation from injuries",220,9.28,10.41,12.45,13.64,23.06,13.78,3.23,13.07,3.39,10.41,20.07
+97110,"Therapeutic exercise to develop strength, endurance, range of motion, and flexibility, each 15 minutes",220,20.41,26.04,26.69,33.37,55.86,35.45,7.33,30.31,7.16,24.5,42.3
+97112,A technique used by physical therapists to restore normal body movement patterns,220,23.0,27.2,30.5,34.77,57.3,34.3,7.57,32.84,8.04,26.76,48.26
+97113,Use of water for therapy/exercises,220,25.81,33.75,34.72,40.41,67.92,42.11,6.66,38.92,9.27,32.49,56.88
+97116,A type of physical therapy,220,19.71,23.15,26.36,29.14,48.72,29.01,5.99,28.12,7.03,23.15,42.04
+97124,Use of massage,220,17.62,21.41,24.81,26.79,49.95,32.33,5.38,26.75,7.57,21.41,43.48
+97140,Manipulation of 1 or more regions of the body,220,18.77,24.3,24.54,31.02,51.6,32.83,6.72,28.07,6.64,22.87,39.48
+97530,"Incorporates the use of multiple parameters, such as balance, strength, and range of motion, for a functional activity",220,23.3,28.65,34.06,35.26,60.39,37.09,6.61,35.13,8.71,28.64,52.56
+97535,Occupational therapy,220,22.76,28.36,29.76,35.72,58.72,35.96,7.36,33.18,7.86,26.69,46.82
+97597,"Debridement (for example, high pressure waterjet with/without suction, sharp selective debridement with scissors, scalpel and forceps)",367,38.54,65.47,101.05,963.0,2866.0,2827.46,897.53,445.77,579.34,63.94,1201.0
+97811,Acupuncture without stimulation,220,18.77,21.78,24.2,36.19,98.98,80.21,14.4,29.77,13.24,21.65,40.61
+97813,Acupuncture with stimulation,220,27.44,31.67,34.31,51.71,144.75,117.31,20.04,43.34,20.03,31.65,64.98
+98940,Chiropractic manipulation in 1-2 regions,220,18.77,21.65,24.06,31.23,72.8,54.03,9.58,27.5,7.75,21.65,39.19
+98941,Chiropractic manipulation in 3-4 regions,220,26.98,31.36,35.32,43.96,104.65,77.67,12.6,39.31,11.35,31.13,56.38
+98943,Chiropractic manipulation not of the spine,220,18.24,21.38,23.44,29.45,71.9,53.66,8.07,26.31,7.42,20.81,36.79
+98966,"Telephone assessment and management service, 5-10 minutes of medical discussion",220,9.39,10.9,12.26,18.33,49.51,40.12,7.43,14.61,6.51,10.83,18.63
+98967,"Telephone assessment and management service, 11-20 minutes of medical discussion",220,17.92,21.11,23.59,34.41,96.51,78.59,13.3,28.04,12.58,21.11,35.73
+98968,"Telephone assessment and management service, 21-30 minutes of medical discussion",220,26.58,31.04,34.92,47.3,141.05,114.47,16.26,41.0,18.23,30.86,53.11
+98970,"Qualified non physician health care professional online digital assessment and management, for an established patient, for up to 7 days, cumulative time during the 7 days; 5-10 minutes",254,7.5,9.2,10.41,14.91,39.56,32.06,5.71,12.02,5.1,7.5,16.72
+98971,"Qualified non physician health care professional online digital assessment and management, for an established patient, for up to 7 days, cumulative time during the 7 days; 11-20 minutes",254,13.0,16.24,18.38,26.32,69.81,56.81,10.08,21.19,9.03,13.0,29.63
+98972,"Qualified non physician health care professional online digital assessment and management, for an established patient, for up to 7 days, cumulative time during the 7 days; 21 or more minutes",254,20.5,25.44,28.8,41.24,109.37,88.87,15.8,32.97,13.92,20.5,44.18
+99051,Medical service during off-hours,218,11.97,15.12,15.93,24.44,63.12,51.15,9.32,19.59,8.35,13.81,25.81
+99173,Eye test,8,5.4,5.49,9.32,9.32,9.32,3.92,3.83,7.87,2.0,5.46,9.32
+99202,"New patient office or other outpatient visit, typically 20 minutes",220,50.2,58.11,65.25,97.76,249.02,198.82,39.65,77.39,32.23,57.92,103.68
+99203,"New patient office or other outpatient visit, typically 30 min",220,71.08,84.14,94.66,141.93,352.59,281.51,57.79,112.79,46.87,82.01,160.06
+99204,"New patient office of other outpatient visit, typically 45 min",220,108.42,128.53,144.59,218.08,538.76,430.34,89.55,171.38,71.41,125.32,239.85
+99205,"New patient office of other outpatient visit, typically 60 min",220,137.23,159.57,179.51,271.66,680.74,543.51,112.09,216.54,91.97,158.34,316.3
+99211,Outpatient visit of established patient not requiring a physician,220,15.04,17.6,17.77,26.32,75.64,60.6,8.72,22.77,10.13,17.05,33.44
+99212,Outpatient visit of established patient requiring a physician,220,30.02,34.64,38.3,57.33,148.94,118.92,22.69,47.94,21.97,34.61,81.23
+99213,"Established patient office or other outpatient visit, typically 15 minutes",220,42.12,57.11,63.41,95.88,245.54,203.42,38.77,78.31,35.94,56.37,130.43
+99214,"Established patient office or other outpatient visit, typically 25 minutes",220,65.71,82.82,93.74,141.47,356.07,290.36,58.65,114.58,50.95,82.71,183.96
+99215,"Established patient office or other outpatient, visit typically 40 minutes",220,95.29,111.91,125.9,189.41,478.28,382.99,77.5,155.69,70.1,111.25,258.97
+99243,"Patient office consultation, typically 40 min",220,81.87,101.57,107.83,161.02,406.11,324.24,59.45,129.79,52.56,94.46,164.97
+99244,"Patient office consultation, typically 60 min",220,122.69,150.4,159.3,229.82,608.61,485.92,79.42,191.16,78.03,141.56,243.93
+99283,"Emergency department visit, moderately severe problem",220,43.16,49.8,54.23,81.31,166.0,122.84,31.51,67.12,25.31,49.8,100.82
+99284,"Emergency department visit, problem of high severity",220,76.46,91.77,103.24,155.11,304.95,228.49,63.34,122.92,44.66,91.49,171.53
+99285,"Emergency department visit, problem with significant threat to life or function",220,115.18,136.64,151.34,227.95,443.0,327.82,91.31,180.48,64.62,132.9,248.46
+99381,Initial visit for an infant,220,73.42,86.32,97.11,145.7,364.23,290.81,59.38,114.72,47.44,84.72,156.24
+99382,Initial visit for new patients 1-4 years old,220,76.94,90.13,101.39,151.81,381.67,304.73,61.68,120.48,49.68,88.78,163.4
+99383,New preventative visit in new patients 5-11 years old,220,80.0,92.57,105.08,158.39,397.99,317.99,65.82,124.39,51.88,92.57,169.62
+99384,New preventative visit in new patients 12-17 years old,220,87.04,104.75,118.56,179.06,450.35,363.31,74.31,139.69,58.67,104.68,190.16
+99385,Initial new patient preventive medicine evaluation (18–39 years),220,87.04,101.51,115.49,173.89,436.39,349.35,72.38,136.19,56.8,101.51,184.9
+99386,Initial new patient preventive medicine evaluation (40–64 years),220,101.76,117.62,133.87,200.69,505.04,403.28,83.07,157.75,65.55,117.47,213.09
+99387,Initial visit for new patients 65 and older years old,220,110.72,127.97,145.21,218.08,549.24,438.52,90.11,171.38,71.31,127.76,231.25
+99391,Periodic primary re-evaluation for an established infant patient,220,60.16,76.6,86.39,131.14,329.31,269.15,54.54,101.42,43.36,76.56,140.48
+99392,Initial visit for new patients 1-4 years old,220,67.2,81.47,92.51,140.06,350.27,283.07,58.59,108.83,45.93,81.46,149.55
+99393,New preventative visit in new patients 5-11 years old,220,66.56,81.2,92.21,139.58,349.11,282.55,58.38,108.38,45.81,81.19,149.08
+99394,New preventative visit in new patients 12-17 years old,220,72.96,89.33,100.78,152.74,384.03,311.07,63.41,118.81,50.31,89.29,162.93
+99395,Established patient periodic preventive medicine examination age 18-39 years,220,73.6,91.49,102.93,156.04,393.31,319.71,64.55,121.28,51.56,91.42,166.75
+99396,Established patient periodic preventive medicine examination age 40-64 years,220,80.64,97.44,109.97,166.38,418.91,338.27,68.94,129.77,54.74,97.37,177.27
+99397,Periodic primary re-evaluation for an established patient 65 and older,220,89.92,104.75,118.86,179.06,450.35,360.43,74.31,140.33,58.75,104.75,190.65
+99421,"Online digital evaluation and management service, for an established patient, for up to 7 days, cumulative time during the 7 days; 5-10 minutes",218,10.09,12.5,13.18,20.2,50.04,39.95,7.7,16.18,6.52,11.64,21.5
+99422,"Online digital evaluation and management service, for an established patient, for up to 7 days, cumulative time during the 7 days; 11-20 minutes",218,20.18,25.0,26.34,40.42,100.09,79.91,15.42,32.26,12.96,23.28,42.04
+99441,"Physician telephone patient service, 5-10 minutes of medical discussion",220,9.86,12.26,15.51,34.64,148.94,139.08,22.38,29.53,29.0,11.54,80.75
+99442,"Physician telephone patient service, 11-20 minutes of medical discussion",220,17.92,23.15,28.2,57.11,245.54,227.62,33.96,50.64,45.98,21.75,129.96
+99443,"Physician telephone patient service, 21-30 minutes of medical discussion",220,26.58,34.41,41.83,82.82,356.07,329.49,48.41,73.47,65.54,32.0,183.96
+G0102,Prostate cancer screening; digital rectal examination,220,14.77,17.33,17.46,25.85,79.2,64.43,8.52,22.68,10.8,16.75,33.44
+G0103,Prostate cancer screening; prostate specific antigen test (psa),226,6.76,8.11,10.52,10.95,32.22,25.46,2.84,10.07,3.34,7.72,11.59
+G0105,Colorectal cancer screening; colonoscopy on individual at high risk,367,180.0,339.6,486.88,1554.0,4419.0,4239.0,1214.4,845.74,735.75,254.7,1736.0
+G0120,"Colorectal cancer screening; alternative to g0105, screening colonoscopy, barium enema",220,111.71,163.86,197.89,295.16,700.53,588.82,131.3,226.58,95.72,162.95,313.92
+G0121,Colorectal cancer screening; colonoscopy on individual not meeting criteria for high risk,367,180.0,340.32,487.35,1554.0,4419.0,4239.0,1213.68,845.9,735.68,255.24,1736.0
+G0289,"Arthroscopy, knee, surgical, for removal of loose body, foreign body, debridement/shaving of articular cartilage (chondroplasty) at the time of other surgical knee arthroscopy in a different compartment of the same knee",367,58.64,79.04,117.98,963.0,2866.0,2807.36,883.96,453.38,574.83,67.67,1201.0
+J0702,Injection to treat reaction to a drug,168,5.17,6.89,6.89,6.89,10.93,5.76,0.0,7.2,1.09,6.89,7.8
+J1745,A biologic medication,173,12.67,31.67,31.67,31.67,98.57,85.9,0.0,35.9,17.49,31.67,35.33
