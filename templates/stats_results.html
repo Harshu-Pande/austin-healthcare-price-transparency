@@ -17,27 +17,35 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     const response = await fetch(`/api/stats_data?procedure={{ procedure }}`);
     const data = await response.json();
     
+    if (data.error) {
+        document.getElementById('boxPlot').innerHTML = `<div class="alert alert-info">${data.error}</div>`;
+        return;
+    }
+
     const labels = Object.keys(data);
-    const datasets = labels.map(plan => ({
-        label: plan,
-        data: [{
+    const datasets = [{
+        label: 'Price Distribution',
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgb(54, 162, 235)',
+        data: labels.map(plan => ({
             min: data[plan].min,
             q1: data[plan].Q1,
             median: data[plan].median,
             q3: data[plan].Q3,
             max: data[plan].max
-        }]
-    }));
+        }))
+    }];
 
     new Chart(document.getElementById('boxPlot'), {
         type: 'boxplot',
         data: {
-            labels: ['Price Distribution'],
+            labels: labels,
             datasets: datasets
         },
         options: {
@@ -46,6 +54,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 title: {
                     display: true,
                     text: 'Price Distribution by Insurance Plan'
+                },
+                legend: {
+                    display: false
                 },
                 tooltip: {
                     callbacks: {
@@ -59,6 +70,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 `Max: $${item.max.toFixed(2)}`
                             ];
                         }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Price ($)'
                     }
                 }
             }
