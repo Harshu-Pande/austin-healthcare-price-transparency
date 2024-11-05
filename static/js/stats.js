@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         timeoutId = setTimeout(async () => {
-            // Using Cigna as default plan for procedure search
-            const response = await fetch(`/api/procedures?plan=Cigna&term=${searchTerm}`);
+            // Using the full insurance plan name for procedure search
+            const response = await fetch(`/api/procedures?plan=Cigna_OAP&term=${searchTerm}`);
             const procedures = await response.json();
             
             procedureList.innerHTML = procedures.map(proc => `
