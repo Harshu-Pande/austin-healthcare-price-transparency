@@ -123,46 +123,37 @@ class DataProcessor:
         return None
 
     def load_data(self):
-        """Load all CSV files into memory with caching"""
-        logger.info(f"Loading data from directory: {self.data_dir}")
-        
-        # Try to get cached file list
-        cache_key = self._get_cache_key("file_list", self.data_dir)
-        cached_files = self._get_from_cache(cache_key)
-        
-        if cached_files:
-            logger.info("Using cached file list")
-            self.data_files = {k: pd.DataFrame(v) for k, v in cached_files.get("data_files", {}).items()}
-            self.summary_files = {k: pd.DataFrame(v) for k, v in cached_files.get("summary_files", {}).items()}
-            return
-
-        for filename in os.listdir(self.data_dir):
-            if not filename.endswith('.csv'):
-                continue
-                
-            filepath = os.path.join(self.data_dir, filename)
-            file_info = self._parse_insurance_info(filename)
-            
-            if not file_info:
-                logger.warning(f"Skipping file with invalid naming pattern: {filename}")
-                continue
-                
-            try:
-                df = pd.read_csv(filepath, low_memory=False)
-                
-                if file_info["is_summary"]:
-                    self.summary_files[filename] = df
-                    logger.info(f"Loaded summary file: {filename}")
-                else:
-                    self.data_files[filename] = df
-                    logger.info(f"Loaded data file: {filename}")
-                
-                # Cache individual file data
-                file_cache_key = self._get_cache_key("file_data", filename)
-                self._set_in_cache(file_cache_key, df.to_dict())
-                
-            except Exception as e:
-                logger.error(f"Error loading {filename}: {str(e)}")
+        """Load data from CSV files"""
+        try:
+            for filename in os.listdir(self.data_dir):
+                if filename.endswith(('.csv', '.csv.gz')):
+                    file_path = os.path.join(self.data_dir, filename)
+                    
+                    # Handle both regular and compressed CSV files
+                    if filename.endswith('.gz'):
+                        df = pd.read_csv(file_path, compression='gzip')
+                    else:
+                        df = pd.read_csv(file_path)
+                    
+                    file_info = self._parse_insurance_info(filename)
+                    
+                    if not file_info:
+                        logger.warning(f"Skipping file with invalid naming pattern: {filename}")
+                        continue
+                        
+                    if file_info["is_summary"]:
+                        self.summary_files[filename] = df
+                        logger.info(f"Loaded summary file: {filename}")
+                    else:
+                        self.data_files[filename] = df
+                        logger.info(f"Loaded data file: {filename}")
+                    
+                    # Cache individual file data
+                    file_cache_key = self._get_cache_key("file_data", filename)
+                    self._set_in_cache(file_cache_key, df.to_dict())
+                    
+        except Exception as e:
+            logger.error(f"Error loading data: {str(e)}")
 
         # Cache file list
         file_list = {
