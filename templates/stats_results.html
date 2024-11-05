@@ -17,7 +17,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     const response = await fetch(`/api/stats_data?procedure={{ procedure }}`);
@@ -36,26 +35,32 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     const labels = Object.keys(data);
-    const datasets = [{
-        label: 'Price Distribution',
-        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-        borderColor: 'rgb(54, 162, 235)',
-        data: labels.map(plan => ({
-            min: parseFloat(data[plan].min),
-            q1: parseFloat(data[plan].Q1),
-            median: parseFloat(data[plan].median),
-            q3: parseFloat(data[plan].Q3),
-            max: parseFloat(data[plan].max)
-        }))
-    }];
     
-    console.log('Processed datasets:', datasets);
+    // Add error handling for empty data
+    if (labels.length === 0) {
+        document.getElementById('boxPlot').innerHTML = '<div class="alert alert-info">No data available for this procedure</div>';
+        return;
+    }
 
-    new Chart(document.getElementById('boxPlot'), {
+    const chart = new Chart(document.getElementById('boxPlot'), {
         type: 'boxplot',
         data: {
             labels: labels,
-            datasets: datasets
+            datasets: [{
+                label: 'Price Distribution',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgb(54, 162, 235)',
+                borderWidth: 1,
+                outlierRadius: 3,
+                itemRadius: 3,
+                data: labels.map(plan => [{
+                    min: parseFloat(data[plan].min),
+                    q1: parseFloat(data[plan].Q1),
+                    median: parseFloat(data[plan].median),
+                    q3: parseFloat(data[plan].Q3),
+                    max: parseFloat(data[plan].max)
+                }])
+            }]
         },
         options: {
             responsive: true,
@@ -63,14 +68,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 title: {
                     display: true,
                     text: 'Price Distribution by Insurance Plan',
-                    font: {
-                        size: 16,
-                        weight: 'bold'
-                    }
+                    font: { size: 16, weight: 'bold' }
                 },
-                legend: {
-                    display: false
-                },
+                legend: { display: false },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -93,10 +93,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     title: {
                         display: true,
                         text: 'Price ($)',
-                        font: {
-                            size: 14,
-                            weight: 'bold'
-                        }
+                        font: { size: 14, weight: 'bold' }
                     },
                     ticks: {
                         callback: function(value) {
