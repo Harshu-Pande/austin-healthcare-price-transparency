@@ -64,11 +64,13 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {% if result['Provider Other Organization Name'] and result['Provider Other Organization Name']|string|trim %}
-                                {{ result['Provider Other Organization Name'] }}
-                                <small class="d-block text-muted">Also known as: {{ result['Provider Organization Name (Legal Business Name)'] }}</small>
+                            {% set other_name = result['Provider Other Organization Name']|string|trim %}
+                            {% set legal_name = result['Provider Organization Name (Legal Business Name)']|string|trim %}
+                            {% if other_name and other_name.lower() != 'nan' and other_name.lower() != 'none' %}
+                                {{ other_name }}
+                                <small class="d-block text-muted">Also known as: {{ legal_name }}</small>
                             {% else %}
-                                {{ result['Provider Organization Name (Legal Business Name)'] }}
+                                {{ legal_name }}
                             {% endif %}
                         </h5>
                         <h6 class="card-subtitle mb-2 text-success">${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
@@ -76,8 +78,9 @@
                         <p class="card-text">
                             <strong>Address:</strong><br>
                             {{ result['Provider First Line Business Practice Location Address'] }}<br>
-                            {% if result['Provider Second Line Business Practice Location Address']|string|trim %}
-                                {{ result['Provider Second Line Business Practice Location Address'] }}<br>
+                            {% set second_line = result['Provider Second Line Business Practice Location Address']|string|trim %}
+                            {% if second_line and second_line.lower() != 'nan' and second_line.lower() != 'none' %}
+                                {{ second_line }}<br>
                             {% endif %}
                             {{ result['Provider Business Practice Location Address City Name'] }},
                             {{ result['Provider Business Practice Location Address State Name'] }}
