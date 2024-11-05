@@ -7,7 +7,7 @@
 
 <div class="card mb-4">
     <div class="card-body">
-        <canvas id="boxPlot"></canvas>
+        <canvas id="boxPlot" style="height: 400px;"></canvas>
     </div>
 </div>
 
@@ -36,13 +36,28 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     const labels = Object.keys(data);
     
-    // Add error handling for empty data
     if (labels.length === 0) {
         document.getElementById('boxPlot').innerHTML = '<div class="alert alert-info">No data available for this procedure</div>';
         return;
     }
 
-    const chart = new Chart(document.getElementById('boxPlot'), {
+    // Set up the box plot data
+    const boxplotData = labels.map(plan => ({
+        min: parseFloat(data[plan].min),
+        q1: parseFloat(data[plan].Q1),
+        median: parseFloat(data[plan].median),
+        q3: parseFloat(data[plan].Q3),
+        max: parseFloat(data[plan].max)
+    }));
+
+    // Calculate the overall min and max for setting axis scales
+    const allValues = boxplotData.flatMap(d => [d.min, d.max]);
+    const overallMin = Math.min(...allValues);
+    const overallMax = Math.max(...allValues);
+    const range = overallMax - overallMin;
+
+    const ctx = document.getElementById('boxPlot').getContext('2d');
+    new Chart(ctx, {
         type: 'boxplot',
         data: {
             labels: labels,
@@ -53,17 +68,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                 borderWidth: 1,
                 outlierRadius: 3,
                 itemRadius: 3,
-                data: labels.map(plan => [{
-                    min: parseFloat(data[plan].min),
-                    q1: parseFloat(data[plan].Q1),
-                    median: parseFloat(data[plan].median),
-                    q3: parseFloat(data[plan].Q3),
-                    max: parseFloat(data[plan].max)
-                }])
+                data: boxplotData
             }]
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 title: {
                     display: true,
@@ -77,11 +87,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                             const item = context.raw;
                             if (!item) return [];
                             return [
-                                `Min: $${parseFloat(item.min).toFixed(2)}`,
-                                `Q1: $${parseFloat(item.q1).toFixed(2)}`,
-                                `Median: $${parseFloat(item.median).toFixed(2)}`,
-                                `Q3: $${parseFloat(item.q3).toFixed(2)}`,
-                                `Max: $${parseFloat(item.max).toFixed(2)}`
+                                `Minimum: $${item.min.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                                `Q1: $${item.q1.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                                `Median: $${item.median.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                                `Q3: $${item.q3.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                                `Maximum: $${item.max.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
                             ];
                         }
                     }
@@ -97,9 +107,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                     },
                     ticks: {
                         callback: function(value) {
-                            return '$' + value.toFixed(2);
+                            return '$' + value.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
                         }
-                    }
+                    },
+                    min: Math.max(0, overallMin - range * 0.1),
+                    max: overallMax + range * 0.1
                 }
             }
         }
