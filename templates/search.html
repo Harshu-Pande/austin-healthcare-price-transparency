@@ -30,6 +30,37 @@
                 <input type="text" class="form-control" id="zipcode" name="zipcode" 
                        pattern="[0-9]{5}" placeholder="Enter 5-digit ZIP code">
             </div>
+
+            <div class="mb-3">
+                <label for="provider" class="form-label">Provider Name</label>
+                <input type="text" class="form-control" id="provider" name="provider" 
+                       placeholder="Filter by provider name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price Range</label>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="number" class="form-control" id="minPrice" name="min_price" 
+                               placeholder="Min Price" min="0" step="0.01">
+                    </div>
+                    <div class="col-6">
+                        <input type="number" class="form-control" id="maxPrice" name="max_price" 
+                               placeholder="Max Price" min="0" step="0.01">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Distance Range (miles)</label>
+                <select class="form-select" id="distance" name="distance">
+                    <option value="">Any Distance</option>
+                    <option value="5">Within 5 miles</option>
+                    <option value="10">Within 10 miles</option>
+                    <option value="25">Within 25 miles</option>
+                    <option value="50">Within 50 miles</option>
+                </select>
+            </div>
             
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
@@ -38,54 +69,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const procedureInput = document.getElementById('procedure');
-    const procedureList = document.getElementById('procedureList');
-    const insuranceSelect = document.getElementById('insurance');
-    const insuranceTypeInput = document.getElementById('insuranceType');
-    let timeoutId;
-
-    insuranceSelect.addEventListener('change', function() {
-        const selectedOption = this.options[this.selectedIndex];
-        insuranceTypeInput.value = selectedOption.dataset.type || '';
-    });
-
-    procedureInput.addEventListener('input', function() {
-        clearTimeout(timeoutId);
-        const searchTerm = this.value;
-        
-        if (searchTerm.length < 2) {
-            procedureList.innerHTML = '';
-            return;
-        }
-
-        timeoutId = setTimeout(async () => {
-            const response = await fetch(`/api/procedures?plan=${insuranceSelect.value}&type=${insuranceTypeInput.value}&term=${searchTerm}`);
-            const procedures = await response.json();
-            
-            procedureList.innerHTML = procedures.map(proc => `
-                <button type="button" class="list-group-item list-group-item-action">
-                    ${proc.billing_code} - ${proc.procedure_name}
-                </button>
-            `).join('');
-        }, 300);
-    });
-
-    procedureList.addEventListener('click', function(e) {
-        if (e.target.matches('button')) {
-            const [code, ...nameParts] = e.target.textContent.split(' - ');
-            const name = nameParts.join(' - ').trim();
-            procedureInput.value = name;
-            procedureList.innerHTML = '';
-        }
-    });
-
-    // Validate ZIP code
-    const zipcodeInput = document.getElementById('zipcode');
-    zipcodeInput.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '').slice(0, 5);
-    });
-});
-</script>
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
 {% endblock %}

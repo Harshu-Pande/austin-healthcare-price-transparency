@@ -28,16 +28,30 @@ def get_procedures():
 @app.route('/search_results')
 def search_results():
     insurance_plan = request.args.get('plan')
-    insurance_type = request.args.get('type', '')  # Make type optional with default empty string
+    insurance_type = request.args.get('type', '')
     procedure = request.args.get('procedure')
     zipcode = request.args.get('zipcode')
     sort_by = request.args.get('sort', 'price')
+    provider = request.args.get('provider')
+    min_price = float(request.args.get('min_price')) if request.args.get('min_price') else None
+    max_price = float(request.args.get('max_price')) if request.args.get('max_price') else None
+    distance = int(request.args.get('distance')) if request.args.get('distance') else None
     
-    if not all([insurance_plan, procedure]):  # Updated validation check
+    if not all([insurance_plan, procedure]):
         return render_template('search_results.html', 
                              results={"error": "Missing required parameters", "results": []})
     
-    results = data_processor.get_search_results(insurance_plan, insurance_type, procedure, zipcode, sort_by)
+    results = data_processor.get_search_results(
+        insurance_plan=insurance_plan,
+        insurance_type=insurance_type,
+        procedure=procedure,
+        zipcode=zipcode,
+        sort_by=sort_by,
+        provider=provider,
+        min_price=min_price,
+        max_price=max_price,
+        distance=distance
+    )
     return render_template('search_results.html', results=results)
 
 @app.route('/stats')

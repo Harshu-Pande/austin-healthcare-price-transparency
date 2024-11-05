@@ -3,25 +3,56 @@
 {% block content %}
 <div class="mb-4">
     <h2>Search Results</h2>
+    <div class="mb-3">
+        <h6>Active Filters:</h6>
+        <div class="d-flex flex-wrap gap-2">
+            {% if request.args.get('provider') %}
+            <span class="badge bg-secondary">Provider: {{ request.args.get('provider') }}</span>
+            {% endif %}
+            {% if request.args.get('min_price') or request.args.get('max_price') %}
+            <span class="badge bg-secondary">
+                Price: ${{ request.args.get('min_price', '0') }} - ${{ request.args.get('max_price', '∞') }}
+            </span>
+            {% endif %}
+            {% if request.args.get('distance') %}
+            <span class="badge bg-secondary">Within {{ request.args.get('distance') }} miles</span>
+            {% endif %}
+            {% if request.args.get('zipcode') %}
+            <span class="badge bg-secondary">ZIP: {{ request.args.get('zipcode') }}</span>
+            {% endif %}
+            {% if request.args.get('plan') %}
+            <span class="badge bg-secondary">Plan: {{ request.args.get('plan') }}</span>
+            {% endif %}
+            <a href="{{ url_for('search_results', 
+                plan=request.args.get('plan'), 
+                type=request.args.get('type'),
+                procedure=request.args.get('procedure')) }}" 
+               class="btn btn-sm btn-outline-secondary">Clear Filters</a>
+        </div>
+    </div>
+
     {% if results.error %}
         <div class="alert alert-info">
             {{ results.error }}
         </div>
     {% else %}
-        <div class="btn-group mb-3">
-            <a href="{{ url_for('search_results', sort='price', plan=request.args.get('plan'), type=request.args.get('type'), procedure=request.args.get('procedure'), zipcode=request.args.get('zipcode')) }}" 
-               class="btn btn-outline-primary">Sort by Price</a>
-            <a href="{{ url_for('search_results', sort='proximity', plan=request.args.get('plan'), type=request.args.get('type'), procedure=request.args.get('procedure'), zipcode=request.args.get('zipcode')) }}" 
-               class="btn btn-outline-primary">Sort by Proximity</a>
+        <div class="mb-3">
+            <div class="btn-group">
+                <a href="{{ url_for('search_results', sort='price', **request.args) }}" 
+                   class="btn btn-outline-primary {% if request.args.get('sort') != 'proximity' %}active{% endif %}">Sort by Price</a>
+                <a href="{{ url_for('search_results', sort='proximity', **request.args) }}" 
+                   class="btn btn-outline-primary {% if request.args.get('sort') == 'proximity' %}active{% endif %}">Sort by Proximity</a>
+            </div>
+            <small class="text-muted ms-2">{{ results.results|length }} results found</small>
         </div>
 
         <div class="row">
             {% for result in results.results %}
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">{{ result['Provider Organization Name (Legal Business Name)'] }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Price: ${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
+                        <h6 class="card-subtitle mb-2 text-success">${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
                         
                         <p class="card-text">
                             <strong>Address:</strong><br>
@@ -32,6 +63,9 @@
                             {{ result['Provider Business Practice Location Address City Name'] }},
                             {{ result['Provider Business Practice Location Address State Name'] }}
                             {{ (result['Provider Business Practice Location Address Postal Code']|string)[:5] }}
+                            {% if result.get('distance') %}
+                            <br><small class="text-muted">{{ "%.1f"|format(result['distance']) }} miles away</small>
+                            {% endif %}
                         </p>
                         
                         <small class="text-muted">NPI: {{ result['npi'] }}</small>

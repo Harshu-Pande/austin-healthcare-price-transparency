@@ -6,10 +6,24 @@ import logging
 import redis
 from cachetools import TTLCache
 import json
+import math
+from typing import Optional
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+def calculate_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Calculate distance between two points using Haversine formula"""
+    R = 3959.87433  # Earth's radius in miles
+
+    lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
+    c = 2 * math.asin(math.sqrt(a))
+    return R * c
 
 class DataProcessor:
     def __init__(self, data_dir: str):
@@ -56,7 +70,7 @@ class DataProcessor:
         except Exception as e:
             logger.warning(f"Cache set failed: {e}")
 
-    def _parse_insurance_info(self, filename: str) -> Dict[str, str]:
+    def _parse_insurance_info(self, filename: str) -> Optional[Dict[str, str]]:
         """Parse insurance and type from filename"""
         data_pattern = r"Austin_(.+?)_data\.csv"
         summary_pattern = r"summary_Austin_(.+?)\.csv"
@@ -209,9 +223,14 @@ class DataProcessor:
             logger.error(f"Error searching procedures: {str(e)}")
             return []
 
-    def get_search_results(self, insurance_plan: str, insurance_type: str = '', procedure: str = None, zipcode: str = None, sort_by: str = 'price') -> Dict:
-        """Get search results for a procedure with caching"""
-        cache_key = self._get_cache_key("search_results", insurance_plan, procedure, zipcode, sort_by)
+    def get_search_results(self, insurance_plan: str, insurance_type: str = '', procedure: str = None, 
+                          zipcode: str = None, sort_by: str = 'price', provider: str = None,
+                          min_price: float = None, max_price: float = None, distance: int = None) -> Dict:
+        """Get search results for a procedure with advanced filtering options"""
+        cache_key = self._get_cache_key(
+            "search_results", insurance_plan, procedure, zipcode, sort_by,
+            provider, min_price, max_price, distance
+        )
         cached_results = self._get_from_cache(cache_key)
         
         if cached_results:
@@ -233,6 +252,19 @@ class DataProcessor:
         if results.empty:
             return {"error": "No results found for this procedure", "results": []}
 
+        # Apply provider filter
+        if provider:
+            results = results[
+                results['Provider Organization Name (Legal Business Name)']
+                .str.contains(provider, case=False, na=False)
+            ]
+
+        # Apply price range filters
+        if min_price is not None:
+            results = results[results['negotiated_rate'] >= float(min_price)]
+        if max_price is not None:
+            results = results[results['negotiated_rate'] <= float(max_price)]
+
         columns = [
             'negotiated_rate',
             'Provider Organization Name (Legal Business Name)',
@@ -250,18 +282,28 @@ class DataProcessor:
             logger.error(f"Error selecting columns: {str(e)}")
             return {"error": f"Error selecting columns: {str(e)}", "results": []}
         
-        if sort_by == 'price':
-            results = results.sort_values('negotiated_rate')
-        elif sort_by == 'proximity' and zipcode:
+        # Handle sorting and distance calculations
+        if zipcode:
             try:
                 results['zip_distance'] = abs(
                     results['Provider Business Practice Location Address Postal Code']
                     .astype(str).str[:5].astype(int) - int(zipcode)
                 )
-                results = results.sort_values('zip_distance')
+                
+                if distance:
+                    # Filter by distance range (approximate using ZIP code difference)
+                    max_zip_diff = int(distance * 0.2)  # Rough approximation
+                    results = results[results['zip_distance'] <= max_zip_diff]
+                
+                if sort_by == 'proximity':
+                    results = results.sort_values('zip_distance')
             except (ValueError, TypeError) as e:
                 logger.error(f"Error calculating zip distances: {str(e)}")
-                results = results.sort_values('negotiated_rate')
+                if sort_by == 'proximity':
+                    sort_by = 'price'  # Fallback to price sorting
+
+        if sort_by == 'price' or not zipcode:
+            results = results.sort_values('negotiated_rate')
         
         result = {"error": None, "results": results.to_dict('records')}
         self._set_in_cache(cache_key, result)
