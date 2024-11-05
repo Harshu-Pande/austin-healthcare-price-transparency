@@ -63,7 +63,12 @@
             <div class="col-md-6 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title">{{ result['Provider Organization Name (Legal Business Name)'] }}</h5>
+                        <h5 class="card-title">
+                            {{ result['Provider Organization Name (Legal Business Name)'] }}
+                            {% if result['Provider Other Organization Name'] %}
+                            <small class="d-block text-muted">Also known as: {{ result['Provider Other Organization Name'] }}</small>
+                            {% endif %}
+                        </h5>
                         <h6 class="card-subtitle mb-2 text-success">${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
                         
                         <p class="card-text">

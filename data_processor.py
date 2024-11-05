@@ -280,6 +280,7 @@ class DataProcessor:
         columns = [
             'negotiated_rate',
             'Provider Organization Name (Legal Business Name)',
+            'Provider Other Organization Name',
             'npi',
             'Provider First Line Business Practice Location Address',
             'Provider Second Line Business Practice Location Address',
@@ -375,6 +376,7 @@ class DataProcessor:
         column_mapping = {
             'negotiated_rate': 'Price',
             'Provider Organization Name (Legal Business Name)': 'Provider Name',
+            'Provider Other Organization Name': 'Other Organization Name',
             'npi': 'NPI',
             'Provider First Line Business Practice Location Address': 'Address Line 1',
             'Provider Second Line Business Practice Location Address': 'Address Line 2',
