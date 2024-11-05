@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, send_file
 import pandas as pd
 import os
 from data_processor import DataProcessor
-import io
+from io import BytesIO
 
 app = Flask(__name__)
 
@@ -86,9 +86,15 @@ def export_results():
     if not csv_data:
         return "No data to export", 404
 
+    # Convert string data to bytes
+    csv_bytes = csv_data.encode('utf-8')
+    
+    # Create BytesIO object
+    mem_file = BytesIO(csv_bytes)
+    
     filename = f"healthcare_prices_{procedure.replace(' ', '_')}.csv"
     return send_file(
-        io.StringIO(csv_data),
+        mem_file,
         mimetype='text/csv',
         as_attachment=True,
         download_name=filename
