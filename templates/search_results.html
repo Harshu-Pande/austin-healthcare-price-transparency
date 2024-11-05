@@ -64,13 +64,11 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {% set other_name = result['Provider Other Organization Name']|string|trim %}
-                            {% set legal_name = result['Provider Organization Name (Legal Business Name)']|string|trim %}
-                            {% if other_name and other_name.lower() != 'nan' and other_name.lower() != 'none' %}
-                                {{ other_name }}
-                                <small class="d-block text-muted">Also known as: {{ legal_name }}</small>
+                            {% if result['Provider Other Organization Name'] and result['Provider Other Organization Name']|string|trim|lower not in ['nan', 'none', ''] %}
+                                {{ result['Provider Other Organization Name'] }}
+                                <small class="d-block text-muted">Also known as: {{ result['Provider Organization Name (Legal Business Name)'] }}</small>
                             {% else %}
-                                {{ legal_name }}
+                                {{ result['Provider Organization Name (Legal Business Name)'] }}
                             {% endif %}
                         </h5>
                         <h6 class="card-subtitle mb-2 text-success">${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
