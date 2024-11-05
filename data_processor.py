@@ -3,12 +3,14 @@ import os
 from typing import List, Dict
 import re
 import logging
-import redis
 from cachetools import TTLCache
 import json
 import math
 from typing import Optional
 import io
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -28,34 +30,45 @@ def calculate_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> fl
 
 class DataProcessor:
     def __init__(self, data_dir: str):
-        self.data_dir = data_dir
+        self.data_dir = self._resolve_data_dir(data_dir)
         self.data_files = {}
         self.summary_files = {}
         
-        # Initialize Redis connection with fallback to environment variables
-        redis_host = os.getenv('REDIS_HOST', 'localhost')
-        redis_port = int(os.getenv('REDIS_PORT', 6379))
-        redis_db = int(os.getenv('REDIS_DB', 0))
-        
-        try:
-            self.redis_client = redis.Redis(
-                host=redis_host,
-                port=redis_port,
-                db=redis_db,
-                socket_connect_timeout=2,
-                socket_timeout=2,
-                decode_responses=True
-            )
-            self.redis_client.ping()
-            logger.info("Redis connection established successfully")
-        except (redis.ConnectionError, redis.TimeoutError) as e:
-            logger.warning(f"Redis connection failed: {e}. Using in-memory cache fallback.")
+        # Only try Redis if explicitly configured
+        if os.getenv('USE_REDIS', 'false').lower() == 'true':
+            try:
+                import redis
+                self._init_redis()
+            except ImportError:
+                logger.warning("Redis package not installed. Using in-memory cache only.")
+                self.redis_client = None
+        else:
             self.redis_client = None
+            logger.info("Using in-memory cache only")
         
-        # Fallback in-memory cache with 1-hour TTL
+        # Initialize memory cache
         self.memory_cache = TTLCache(maxsize=100, ttl=3600)
-        
         self.load_data()
+
+    def _resolve_data_dir(self, data_dir: str) -> str:
+        """Resolve the data directory path"""
+        if os.path.exists(data_dir):
+            return data_dir
+            
+        # Try different possible locations
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        possible_paths = [
+            os.path.join(current_dir, 'static', 'data'),
+            os.path.join(current_dir, '..', 'static', 'data'),
+            os.path.join(current_dir, 'data'),
+        ]
+        
+        for path in possible_paths:
+            if os.path.exists(path):
+                logger.info(f"Found data directory at: {path}")
+                return path
+                
+        raise FileNotFoundError(f"Could not find data directory. Tried: {possible_paths}")
 
     def _get_cache_key(self, prefix: str, *args) -> str:
         """Generate a cache key from prefix and arguments"""
@@ -111,25 +124,6 @@ class DataProcessor:
 
     def load_data(self):
         """Load all CSV files into memory with caching"""
-        if not os.path.exists(self.data_dir):
-            logger.warning(f"Data directory not found at {self.data_dir}")
-            current_dir = os.path.dirname(os.path.abspath(__file__))
-            possible_data_dirs = [
-                os.path.join(current_dir, 'static', 'data'),
-                os.path.join(current_dir, 'data'),
-                os.path.join(os.path.dirname(current_dir), 'static', 'data'),
-                os.path.join(os.path.dirname(current_dir), 'data')
-            ]
-            
-            for dir_path in possible_data_dirs:
-                if os.path.exists(dir_path):
-                    self.data_dir = dir_path
-                    logger.info(f"Found data directory at: {dir_path}")
-                    break
-            else:
-                logger.error("Could not find data directory")
-                return
-
         logger.info(f"Loading data from directory: {self.data_dir}")
         
         # Try to get cached file list
