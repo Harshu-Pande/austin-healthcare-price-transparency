@@ -50,11 +50,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         max: parseFloat(data[plan].max)
     }));
 
-    // Calculate the overall min and max for setting axis scales
-    const allValues = boxplotData.flatMap(d => [d.min, d.max]);
+    // Calculate custom min and max for better scaling
+    const allValues = boxplotData.flatMap(d => [d.min, d.q1, d.median, d.q3, d.max]);
     const overallMin = Math.min(...allValues);
     const overallMax = Math.max(...allValues);
     const range = overallMax - overallMin;
+
+    // Calculate better boundaries
+    const paddingFactor = 0.1;  // 10% padding
+    const yMin = Math.max(0, overallMin - (range * paddingFactor));
+    const yMax = overallMax + (range * paddingFactor);
 
     const ctx = document.getElementById('boxPlot').getContext('2d');
     new Chart(ctx, {
@@ -106,6 +111,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             },
             scales: {
                 y: {
+                    beginAtZero: false,  // Allow scale to start from calculated min
+                    min: yMin,
+                    max: yMax,
                     title: {
                         display: true,
                         text: 'Price ($)',
@@ -113,17 +121,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                     },
                     ticks: {
                         font: { size: 12 },
+                        count: 10,  // Increase number of ticks for better granularity
                         callback: function(value) {
                             return '$' + value.toLocaleString('en-US', {
-                                minimumFractionDigits: 2, 
+                                minimumFractionDigits: 2,
                                 maximumFractionDigits: 2
                             });
                         }
                     },
-                    min: Math.max(0, overallMin - range * 0.2),
-                    max: overallMax + range * 0.2,
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.1)'
+                        color: 'rgba(255, 255, 255, 0.1)',
+                        drawBorder: true
                     }
                 },
                 x: {
