@@ -1,0 +1,130 @@
+I need you to create a full stack app for me that I can easily deploy on vercel. The backend tables will be csv files and so they will somehow need to be deployed with the frontend all together as one on vercel. I will not be deploying the backend tables somewhere else like supabase or anything. 
+
+Ok so here is the project.
+
+I have a grand total of 8 csv files that describe the prices of medical services across hospitals in 4 insurance plans. So to clarify there are 4 csv files that have the raw data about the prices for those 4 insurance plans, and then there are 4 csv files that have some summary statistics for the prices for those 4 insurance plans, so 8 csv files in total. 
+
+For your reference, I am providing you with the data strucutre of one of the insurance data files and one of the summary files for that same plan.
+
+Structure for file: summary_Austin_Cigna_OAP.csv
+--------------------------------------------------
+Column Names and Data Types:
+billing_code        object
+procedure_name      object
+count                int64
+min                float64
+Q1                 float64
+median             float64
+Q3                 float64
+max                float64
+range              float64
+IQR                float64
+mean               float64
+std                float64
+10th_percentile    float64
+90th_percentile    float64
+
+
+Structure for file: Austin_Cigna_OAP_data.csv
+--------------------------------------------------
+Column Names and Data Types:
+procedure_name                                                       object
+tin_type                                                             object
+tin_value                                                             int64
+billing_class                                                        object
+negotiated_type                                                      object
+service_code                                                         object
+negotiated_rate                                                     float64
+npi                                                                   int64
+reporting_entity_name                                                object
+reporting_entity_type                                                object
+plan_name                                                           float64
+plan_id_type                                                        float64
+plan_id                                                             float64
+plan_market_type                                                    float64
+last_updated_on                                                      object
+version                                                              object
+url                                                                  object
+billing_code                                                         object
+NPI                                                                   int64
+Entity Type Code                                                      int64
+Provider Organization Name (Legal Business Name)                     object
+Provider Other Organization Name                                     object
+Provider Other Organization Name Type Code                          float64
+Provider First Line Business Mailing Address                         object
+Provider Second Line Business Mailing Address                        object
+Provider Business Mailing Address City Name                          object
+Provider Business Mailing Address State Name                         object
+Provider Business Mailing Address Postal Code                         int64
+Provider Business Mailing Address Country Code (If outside U.S.)     object
+Provider Business Mailing Address Telephone Number                  float64
+Provider Business Mailing Address Fax Number                        float64
+Provider First Line Business Practice Location Address               object
+Provider Second Line Business Practice Location Address              object
+Provider Business Practice Location Address City Name                object
+Provider Business Practice Location Address State Name               object
+Provider Business Practice Location Address Postal Code               int64
+Provider Business Practice Location Address Telephone Number        float64
+Provider Business Practice Location Address Fax Number              float64
+Provider Enumeration Date                                            object
+Last Update Date                                                     object
+Authorized Official Last Name                                        object
+Authorized Official First Name                                       object
+Authorized Official Middle Name                                      object
+Authorized Official Title or Position                                object
+Authorized Official Telephone Number                                  int64
+Provider License Number_1                                            object
+Provider License Number State Code_1                                 object
+Healthcare Provider Primary Taxonomy Switch_1                        object
+Is Sole Proprietor                                                  float64
+Is Organization Subpart                                              object
+Parent Organization LBN                                              object
+Parent Organization TIN                                              object
+Authorized Official Name Prefix Text                                 object
+Authorized Official Name Suffix Text                                 object
+Authorized Official Credential Text                                  object
+Healthcare Provider Taxonomy Group_1                                 object
+Healthcare Provider Taxonomy Group_2                                 object
+Certification Date                                                   object
+Combined_taxonomy_codes                                              object
+
+
+So, what we want to do is have 2 features in the web app: an indivdual search, and an statistics dashboard.
+
+1. the individual search feature:
+
+In this feature, it will ask the user to select a insurance plan from a dropdown menu ( where the options will come from the names of the data files. so for example, one of the options might be Cigna which comes from the table name "Austin_Cigna_OAP_data.csv" so basically its the thing that comes right after "Austin_")
+
+Now below the dropdown menu will be a text field where the user can enter the "procedure_name" and/or the "billing_code". It will also be sort of like a dropdown, so as the user is typing, the more and more relevant options show up in the dropdown menu, so the user doesnt have to correctly type the whole thing, they can simply select the right option when they see it in the dropdown menu. One thing to remember is that each "procedue_name" only has one "billing_code" associated with it. so in the dropdown menu, you can display it like "billing_code, procedure_name" for each one. 
+
+Now below that is another search field called zip code, where the user can enter a 5 digit zip code. 
+
+Below that is a search button.
+
+When they enter the information and hit search, it will navigate to a results page. the app will perform a background query where it uses the things the user had entered to pull information from the appropriate rows from the data tables. in particular, the user had selected a insurance plan, so we would focus on the data table associated with that insurance plan like "Austin_Cigna_OAP_data.csv" for example. then in that data table, we would filter by the "procedure_name" . Now with the rows that come up, are interested in just the "negotiated_rate", the "Provider Organization Name (Legal Business Name)", the "npi", the "Provider First Line Business Practice Location Address", "Provider Second Line Business Practice Location Address" (dont include if this is blank), "Provider Business Practice Location Address City Name", "Provider Business Practice Location Address State Name", and the first 5 characters from "Provider Business Practice Location Address Postal Code".
+
+We want to display these results to the user in a visually appealing way since this app will be used to compare prices of medical procedures across different facilities. so ideally we would want the organization name and the associated price to be clearly visible while the other information is more discreet, especilaly the stuff like npi. 
+
+The user can sort the results based on a 2 different ways. one is by price (assending or descending) or by proximity( where it will show results closest to the zip code they had entered. so first it will show any results where the first 5 characters of the "Provider Business Practice Location Address Postal Code" match up with what the user had entered. and then it will show the results in order of which ones are closest to the zipcode listed. for this whole app, we will be only looking at the first 5 characters in the "Provider Business Practice Location Address Postal Code", and not displaying any of the remaining characters that might be in the data table. 
+
+The user would be able to easily navigate back and forth from this results page to the search page, and even back to the home page where they could choose between the two features. 
+
+2. the statistics feature: 
+
+In this feature, the user will select a procedure similar to how they did previously where its a dropdown menu blah blah blah.
+
+Then once they have selexted the procedure, there will be a button below called "generate summary graphs".
+
+When the user clicks that button it will take them to a results page. 
+
+The app will first see which of the 4 insurance summary tables contain the procedure the user entered as not all insurances necessarily have information about all procedures. it will only proceed with the ones that do have that procedure included. next it will create a visually appealing box and whisker plot using the values that are provided in the summary insurance tables. There will be one box and whisker plot for each insurance plan that offers this procedure.
+
+For example for Cigna, it will pull information from "summary_Austin_Cigna_OAP.csv" and then use the "min", "Q1", "median", "Q3", "max" values in that table to create the parameters for the plot. Also if the user hovers over or clicks over the different parts of the plot, they should be able to see the actual value corresponding to that part. 
+
+The top of the page will be neatly titled with the procedure name and billing code, and also have the appropriate legend. 
+
+The user should again be able to go back and forth easily from this page back to the procedure selection page and back to the home page. 
+
+Remeber that this whole app should be able to be deployed on vercel. You will need to provide all of the code and instructions for this app. I have the 8 csvs ready so you will have to also tell me exactly where to put them and how to deploy it on vercel with what settings so that it works correctly. This whole application will be called "Austin Healthcare Price Transparency App"
+
+It is extremely crucial that this app is fully functional and works and is able to be deployed with out any issues as i dont have much time to troubleshoot and i dont have much programming experience either. Last time when deploying an app on vercel I had some issues with deploying a react app giving me some errors. 
