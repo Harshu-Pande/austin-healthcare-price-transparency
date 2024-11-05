@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4 mb-4">Austin Healthcare Price Transparency</h1>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Price Search</h5>
+                    <p class="card-text">Search for specific medical procedures and compare prices across providers.</p>
+                    <a href="/search" class="btn btn-primary">Start Search</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Price Statistics</h5>
+                    <p class="card-text">View price statistics and comparisons across insurance plans.</p>
+                    <a href="/stats" class="btn btn-primary">View Statistics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

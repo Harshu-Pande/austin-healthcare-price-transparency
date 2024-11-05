@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4">Search Medical Procedures</h2>
+        <form id="searchForm" action="/search_results" method="get">
+            <div class="mb-3">
+                <label for="insurance" class="form-label">Insurance Plan</label>
+                <select class="form-select" id="insurance" name="plan" required>
+                    <option value="">Select Insurance Plan</option>
+                    {% for plan in insurance_plans %}
+                    <option value="{{ plan }}">{{ plan }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="procedure" class="form-label">Procedure</label>
+                <input type="text" class="form-control" id="procedure" name="procedure" 
+                       placeholder="Start typing procedure name or billing code" required>
+                <div id="procedureList" class="list-group mt-2"></div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="zipcode" class="form-label">ZIP Code</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode" 
+                       pattern="[0-9]{5}" placeholder="Enter 5-digit ZIP code">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}

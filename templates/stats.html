@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4">Price Statistics</h2>
+        <form id="statsForm" action="/stats_results" method="get">
+            <div class="mb-3">
+                <label for="procedure" class="form-label">Select Procedure</label>
+                <input type="text" class="form-control" id="procedure" name="procedure" 
+                       placeholder="Start typing procedure name or billing code" required>
+                <div id="procedureList" class="list-group mt-2"></div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Generate Summary Graphs</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/stats.js') }}"></script>
+{% endblock %}

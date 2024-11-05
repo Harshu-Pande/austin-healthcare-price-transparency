@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-4">
+    <h2>Price Statistics for {{ procedure }}</h2>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <canvas id="boxPlot"></canvas>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('stats') }}" class="btn btn-secondary">New Statistics Search</a>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    const response = await fetch(`/api/stats_data?procedure={{ procedure }}`);
+    const data = await response.json();
+    
+    const labels = Object.keys(data);
+    const datasets = labels.map(plan => ({
+        label: plan,
+        data: [{
+            min: data[plan].min,
+            q1: data[plan].Q1,
+            median: data[plan].median,
+            q3: data[plan].Q3,
+            max: data[plan].max
+        }]
+    }));
+
+    new Chart(document.getElementById('boxPlot'), {
+        type: 'boxplot',
+        data: {
+            labels: ['Price Distribution'],
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Price Distribution by Insurance Plan'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const item = context.raw;
+                            return [
+                                `Min: $${item.min.toFixed(2)}`,
+                                `Q1: $${item.q1.toFixed(2)}`,
+                                `Median: $${item.median.toFixed(2)}`,
+                                `Q3: $${item.q3.toFixed(2)}`,
+                                `Max: $${item.max.toFixed(2)}`
+                            ];
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-4">
+    <h2>Search Results</h2>
+    <div class="btn-group mb-3">
+        <a href="{{ url_for('search_results', **request.args, sort='price') }}" 
+           class="btn btn-outline-primary">Sort by Price</a>
+        <a href="{{ url_for('search_results', **request.args, sort='proximity') }}" 
+           class="btn btn-outline-primary">Sort by Proximity</a>
+    </div>
+</div>
+
+<div class="row">
+    {% for result in results %}
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ result['Provider Organization Name (Legal Business Name)'] }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Price: ${{ "%.2f"|format(result['negotiated_rate']) }}</h6>
+                
+                <p class="card-text">
+                    <strong>Address:</strong><br>
+                    {{ result['Provider First Line Business Practice Location Address'] }}<br>
+                    {% if result['Provider Second Line Business Practice Location Address'] %}
+                        {{ result['Provider Second Line Business Practice Location Address'] }}<br>
+                    {% endif %}
+                    {{ result['Provider Business Practice Location Address City Name'] }},
+                    {{ result['Provider Business Practice Location Address State Name'] }}
+                    {{ result['Provider Business Practice Location Address Postal Code']|string()[:5] }}
+                </p>
+                
+                <small class="text-muted">NPI: {{ result['npi'] }}</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('search') }}" class="btn btn-secondary">New Search</a>
+</div>
+{% endblock %}
