@@ -13,11 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         timeoutId = setTimeout(async () => {
-            // Using the full insurance plan name for procedure search
-            const response = await fetch(`/api/procedures?plan=Cigna_OAP&term=${searchTerm}`);
-            const procedures = await response.json();
+            const insurancePlans = ['Aetna_PPO', 'BCBS_Essentials', 'Cigna_OAP', 'UHC_Options_PPO'];
+            let allProcedures = new Set();
+
+            // Fetch procedures from all insurance plans
+            for (const plan of insurancePlans) {
+                const response = await fetch(`/api/procedures?plan=${plan}&term=${searchTerm}`);
+                const procedures = await response.json();
+                procedures.forEach(proc => allProcedures.add(JSON.stringify(proc)));
+            }
+
+            // Convert back to array and remove duplicates
+            const uniqueProcedures = Array.from(allProcedures).map(proc => JSON.parse(proc));
             
-            procedureList.innerHTML = procedures.map(proc => `
+            procedureList.innerHTML = uniqueProcedures.map(proc => `
                 <button type="button" class="list-group-item list-group-item-action">
                     ${proc.billing_code} - ${proc.procedure_name}
                 </button>

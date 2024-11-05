@@ -106,21 +106,22 @@ document.addEventListener('DOMContentLoaded', async function() {
             },
             scales: {
                 y: {
-                    beginAtZero: true,
                     title: {
                         display: true,
                         text: 'Price ($)',
-                        font: { size: 14, weight: 'bold' },
-                        padding: { bottom: 10 }
+                        font: { size: 14, weight: 'bold' }
                     },
                     ticks: {
                         font: { size: 12 },
                         callback: function(value) {
-                            return '$' + value.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                            return '$' + value.toLocaleString('en-US', {
+                                minimumFractionDigits: 2, 
+                                maximumFractionDigits: 2
+                            });
                         }
                     },
-                    min: Math.max(0, overallMin - range * 0.1),
-                    max: overallMax + range * 0.1,
+                    min: Math.max(0, overallMin - range * 0.2),
+                    max: overallMax + range * 0.2,
                     grid: {
                         color: 'rgba(255, 255, 255, 0.1)'
                     }
