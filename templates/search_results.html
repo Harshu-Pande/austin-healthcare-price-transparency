@@ -31,7 +31,7 @@
                             {% endif %}
                             {{ result['Provider Business Practice Location Address City Name'] }},
                             {{ result['Provider Business Practice Location Address State Name'] }}
-                            {{ result['Provider Business Practice Location Address Postal Code']|string()[:5] }}
+                            {{ (result['Provider Business Practice Location Address Postal Code']|string)[:5] }}
                         </p>
                         
                         <small class="text-muted">NPI: {{ result['npi'] }}</small>
