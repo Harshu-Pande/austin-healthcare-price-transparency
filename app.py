@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 import pandas as pd
 import os
 from data_processor import DataProcessor
+import io
 
 app = Flask(__name__)
 
@@ -53,6 +54,45 @@ def search_results():
         distance=distance
     )
     return render_template('search_results.html', results=results)
+
+@app.route('/export_results')
+def export_results():
+    insurance_plan = request.args.get('plan')
+    insurance_type = request.args.get('type', '')
+    procedure = request.args.get('procedure')
+    zipcode = request.args.get('zipcode')
+    sort_by = request.args.get('sort', 'price')
+    provider = request.args.get('provider')
+    min_price = float(request.args.get('min_price')) if request.args.get('min_price') else None
+    max_price = float(request.args.get('max_price')) if request.args.get('max_price') else None
+    distance = int(request.args.get('distance')) if request.args.get('distance') else None
+
+    if not all([insurance_plan, procedure]):
+        return "Missing required parameters", 400
+
+    results = data_processor.get_search_results(
+        insurance_plan=insurance_plan,
+        insurance_type=insurance_type,
+        procedure=procedure,
+        zipcode=zipcode,
+        sort_by=sort_by,
+        provider=provider,
+        min_price=min_price,
+        max_price=max_price,
+        distance=distance
+    )
+
+    csv_data = data_processor.export_search_results(results)
+    if not csv_data:
+        return "No data to export", 404
+
+    filename = f"healthcare_prices_{procedure.replace(' ', '_')}.csv"
+    return send_file(
+        io.StringIO(csv_data),
+        mimetype='text/csv',
+        as_attachment=True,
+        download_name=filename
+    )
 
 @app.route('/stats')
 def stats():

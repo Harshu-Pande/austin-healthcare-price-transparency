@@ -8,6 +8,7 @@ from cachetools import TTLCache
 import json
 import math
 from typing import Optional
+import io
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -351,3 +352,37 @@ class DataProcessor:
             
         self._set_in_cache(cache_key, stats_data)
         return stats_data
+
+    def export_search_results(self, results: Dict) -> str:
+        """Export search results to CSV format"""
+        if results.get("error") or not results.get("results"):
+            return ""
+            
+        df = pd.DataFrame(results["results"])
+        
+        # Rename columns for better readability
+        column_mapping = {
+            'negotiated_rate': 'Price',
+            'Provider Organization Name (Legal Business Name)': 'Provider Name',
+            'npi': 'NPI',
+            'Provider First Line Business Practice Location Address': 'Address Line 1',
+            'Provider Second Line Business Practice Location Address': 'Address Line 2',
+            'Provider Business Practice Location Address City Name': 'City',
+            'Provider Business Practice Location Address State Name': 'State',
+            'Provider Business Practice Location Address Postal Code': 'ZIP Code'
+        }
+        df = df.rename(columns=column_mapping)
+        
+        # Format price column
+        df['Price'] = df['Price'].apply(lambda x: f"${x:.2f}")
+        
+        # Format ZIP code
+        df['ZIP Code'] = df['ZIP Code'].astype(str).str[:5]
+        
+        # Remove empty columns
+        df = df.replace('', pd.NA).dropna(axis=1, how='all')
+        
+        # Convert to CSV string
+        output = io.StringIO()
+        df.to_csv(output, index=False)
+        return output.getvalue()
