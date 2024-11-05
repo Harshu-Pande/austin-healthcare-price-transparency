@@ -34,18 +34,14 @@
     {% else %}
         <div class="mb-3 d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                {% with args = dict(request.args) %}
-                {% do args.update({'sort': 'price'}) %}
-                <a href="{{ url_for('search_results', **args) }}" 
+                <a href="{{ url_for('search_results', **request.args|dict(sort='price')) }}" 
                    class="btn btn-outline-primary {% if request.args.get('sort') != 'proximity' %}active{% endif %}">
                    Sort by Price
                 </a>
-                {% do args.update({'sort': 'proximity'}) %}
-                <a href="{{ url_for('search_results', **args) }}" 
+                <a href="{{ url_for('search_results', **request.args|dict(sort='proximity')) }}" 
                    class="btn btn-outline-primary {% if request.args.get('sort') == 'proximity' %}active{% endif %}">
                    Sort by Proximity
                 </a>
-                {% endwith %}
             </div>
             <div>
                 <small class="text-muted me-2">{{ results.results|length }} results found</small>

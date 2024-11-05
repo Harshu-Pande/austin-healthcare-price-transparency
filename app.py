@@ -6,8 +6,13 @@ from io import BytesIO
 
 app = Flask(__name__)
 
-# Initialize data processor
-data_processor = DataProcessor('static/data')
+# Initialize data processor with the appropriate data directory for Vercel
+data_dir = 'static/data'
+if os.getenv('VERCEL_ENV') == 'production':
+    # In Vercel production, use the absolute path
+    data_dir = os.path.join(os.getcwd(), 'static', 'data')
+
+data_processor = DataProcessor(data_dir)
 
 @app.route('/')
 def index():
@@ -40,7 +45,7 @@ def search_results():
     
     if not all([insurance_plan, procedure]):
         return render_template('search_results.html', 
-                             results={"error": "Missing required parameters", "results": []})
+                          results={"error": "Missing required parameters", "results": []})
     
     results = data_processor.get_search_results(
         insurance_plan=insurance_plan,
@@ -120,4 +125,5 @@ def stats_results():
     return render_template('stats_results.html', procedure=procedure)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.getenv('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
