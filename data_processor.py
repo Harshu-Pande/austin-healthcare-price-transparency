@@ -112,8 +112,8 @@ class DataProcessor:
         
         if cached_files:
             logger.info("Using cached file list")
-            self.data_files = cached_files.get("data_files", {})
-            self.summary_files = cached_files.get("summary_files", {})
+            self.data_files = {k: pd.DataFrame(v) for k, v in cached_files.get("data_files", {}).items()}
+            self.summary_files = {k: pd.DataFrame(v) for k, v in cached_files.get("summary_files", {}).items()}
             return
 
         for filename in os.listdir(self.data_dir):
@@ -130,9 +130,6 @@ class DataProcessor:
             try:
                 df = pd.read_csv(filepath, low_memory=False)
                 
-                # Convert DataFrame to dict for caching
-                df_dict = df.to_dict()
-                
                 if file_info["is_summary"]:
                     self.summary_files[filename] = df
                     logger.info(f"Loaded summary file: {filename}")
@@ -142,7 +139,7 @@ class DataProcessor:
                 
                 # Cache individual file data
                 file_cache_key = self._get_cache_key("file_data", filename)
-                self._set_in_cache(file_cache_key, df_dict)
+                self._set_in_cache(file_cache_key, df.to_dict())
                 
             except Exception as e:
                 logger.error(f"Error loading {filename}: {str(e)}")
@@ -212,7 +209,7 @@ class DataProcessor:
             logger.error(f"Error searching procedures: {str(e)}")
             return []
 
-    def get_search_results(self, insurance_plan: str, insurance_type: str, procedure: str, zipcode: str, sort_by: str) -> Dict:
+    def get_search_results(self, insurance_plan: str, insurance_type: str = '', procedure: str = None, zipcode: str = None, sort_by: str = 'price') -> Dict:
         """Get search results for a procedure with caching"""
         cache_key = self._get_cache_key("search_results", insurance_plan, procedure, zipcode, sort_by)
         cached_results = self._get_from_cache(cache_key)

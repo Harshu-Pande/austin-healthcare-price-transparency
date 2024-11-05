@@ -28,12 +28,12 @@ def get_procedures():
 @app.route('/search_results')
 def search_results():
     insurance_plan = request.args.get('plan')
-    insurance_type = request.args.get('type')
+    insurance_type = request.args.get('type', '')  # Make type optional with default empty string
     procedure = request.args.get('procedure')
     zipcode = request.args.get('zipcode')
     sort_by = request.args.get('sort', 'price')
     
-    if not all([insurance_plan, insurance_type, procedure]):
+    if not all([insurance_plan, procedure]):  # Updated validation check
         return render_template('search_results.html', 
                              results={"error": "Missing required parameters", "results": []})
     
