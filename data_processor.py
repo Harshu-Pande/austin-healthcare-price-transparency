@@ -160,6 +160,9 @@ class DataProcessor:
             "data_files": {k: v.to_dict() for k, v in self.data_files.items()},
             "summary_files": {k: v.to_dict() for k, v in self.summary_files.items()}
         }
+        
+        # Define cache_key before using it
+        cache_key = self._get_cache_key("file_list")  # Define cache_key here
         self._set_in_cache(cache_key, file_list)
         
         logger.info(f"Loaded {len(self.data_files)} data files and {len(self.summary_files)} summary files")
