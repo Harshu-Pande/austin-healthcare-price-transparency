@@ -65,7 +65,7 @@
                     <div class="card-body">
                         <h5 class="card-title">
                             {{ result['Provider Organization Name (Legal Business Name)'] }}
-                            {% if result['Provider Other Organization Name'] %}
+                            {% if result['Provider Other Organization Name'] and result['Provider Other Organization Name']|string|trim %}
                             <small class="d-block text-muted">Also known as: {{ result['Provider Other Organization Name'] }}</small>
                             {% endif %}
                         </h5>
@@ -74,7 +74,7 @@
                         <p class="card-text">
                             <strong>Address:</strong><br>
                             {{ result['Provider First Line Business Practice Location Address'] }}<br>
-                            {% if result['Provider Second Line Business Practice Location Address'] %}
+                            {% if result['Provider Second Line Business Practice Location Address']|string|trim %}
                                 {{ result['Provider Second Line Business Practice Location Address'] }}<br>
                             {% endif %}
                             {{ result['Provider Business Practice Location Address City Name'] }},
