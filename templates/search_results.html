@@ -9,9 +9,9 @@
         </div>
     {% else %}
         <div class="btn-group mb-3">
-            <a href="{{ url_for('search_results', **request.args, sort='price') }}" 
+            <a href="{{ url_for('search_results', sort='price', plan=request.args.get('plan'), type=request.args.get('type'), procedure=request.args.get('procedure'), zipcode=request.args.get('zipcode')) }}" 
                class="btn btn-outline-primary">Sort by Price</a>
-            <a href="{{ url_for('search_results', **request.args, sort='proximity') }}" 
+            <a href="{{ url_for('search_results', sort='proximity', plan=request.args.get('plan'), type=request.args.get('type'), procedure=request.args.get('procedure'), zipcode=request.args.get('zipcode')) }}" 
                class="btn btn-outline-primary">Sort by Proximity</a>
         </div>
 
